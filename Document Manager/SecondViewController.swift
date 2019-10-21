@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
+    
     
     var docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
     
@@ -44,6 +45,16 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddDocControllerViewController
+        vc.delegate = self
+    }
+    
+    func addDoc(name: String) {
+        docList.append(name)
+        docTableView.reloadData()
     }
 
 
