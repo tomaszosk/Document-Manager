@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
+    var docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -26,6 +26,18 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         return(cell)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            self.docList.remove(at: indexPath.row)
+            docTableView.reloadData()
+        }
+        
+        
+    }
+    
+    
 
     @IBOutlet weak var docTableView: UITableView!
     
