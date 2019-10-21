@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Przedsiębiorstwo-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Document_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Przedsiębiorstwo" image="house.fill" catalog="system" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +73,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e5I-2v-DTN" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="0Qk-RA-vFp"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
@@ -126,7 +126,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-mh-kx1">
                                 <rect key="frame" x="20" y="275" width="374" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Dodaj">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,11 +148,11 @@
             </objects>
             <point key="canvasLocation" x="2127.536231884058" y="361.60714285714283"/>
         </scene>
-        <!--Item-->
+        <!--Lista dokumentów-->
         <scene sceneID="yMY-Dg-cfj">
             <objects>
                 <navigationController id="cib-cQ-cHT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="h7X-D8-EHy"/>
+                    <tabBarItem key="tabBarItem" title="Lista dokumentów" image="doc.on.doc.fill" catalog="system" id="h7X-D8-EHy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qxm-4c-lhR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -164,6 +164,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRX-ln-a0O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749" y="362"/>
+        </scene>
+        <!--Raport-->
+        <scene sceneID="wJ6-w9-Qip">
+            <objects>
+                <viewController id="KaB-gc-0Kz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GaB-Vh-pJD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="dXq-lH-vdZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Raport" image="chart.bar.fill" catalog="system" id="US3-JV-CaS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hm-sV-P9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-41" y="986"/>
+        </scene>
+        <!--Szukaj-->
+        <scene sceneID="Fx1-T0-ahM">
+            <objects>
+                <viewController id="isE-68-dnq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n3o-m3-mhp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="zwF-gF-H9f"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Szukaj" image="magnifyingglass" catalog="system" id="J1e-vG-fOB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iN5-vN-IDV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="1158"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -177,6 +209,8 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="cib-cQ-cHT" kind="relationship" relationship="viewControllers" id="EFa-uy-3f4"/>
+                        <segue destination="KaB-gc-0Kz" kind="relationship" relationship="viewControllers" id="jIr-Tt-1g6"/>
+                        <segue destination="isE-68-dnq" kind="relationship" relationship="viewControllers" id="qPo-g5-9zR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -185,7 +219,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
+        <image name="doc.on.doc.fill" catalog="system" width="58" height="64"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="60"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
