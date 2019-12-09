@@ -16,6 +16,7 @@
 		7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D5235CF81200972E59 /* LaunchScreen.storyboard */; };
 		764AC4D3235DBA9600F23329 /* AddDocControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */; };
 		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
+		76725CF9239EF57E0043F2EF /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF8239EF57E0043F2EF /* Documents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7626C3D8235CF81200972E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocControllerViewController.swift; sourceTree = "<group>"; };
 		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		76725CF8239EF57E0043F2EF /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				7626C3D8235CF81200972E59 /* Info.plist */,
 				764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */,
 				76725CF6239EF4910043F2EF /* Document.swift */,
+				76725CF8239EF57E0043F2EF /* Documents.swift */,
 			);
 			path = "Document Manager";
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7626C3CF235CF80F00972E59 /* SecondViewController.swift in Sources */,
+				76725CF9239EF57E0043F2EF /* Documents.swift in Sources */,
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */,
