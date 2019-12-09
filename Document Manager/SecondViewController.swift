@@ -19,7 +19,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
@@ -35,11 +34,9 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
             docTableView.reloadData()
         }
         
-        
     }
     
     
-
     @IBOutlet weak var docTableView: UITableView!
     
     override func viewDidLoad() {
@@ -51,6 +48,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let vc = segue.destination as! AddDocControllerViewController
         vc.delegate = self
     }
+    
     
     func addDoc(name: String) {
         docList.append(name)
