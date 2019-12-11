@@ -64,6 +64,7 @@
 		7626C3C7235CF80F00972E59 /* Document Manager */ = {
 			isa = PBXGroup;
 			children = (
+				76DB8C0123A1ABA600B8DB34 /* New Group */,
 				7626C3C8235CF80F00972E59 /* AppDelegate.swift */,
 				7626C3CA235CF80F00972E59 /* SceneDelegate.swift */,
 				7626C3CC235CF80F00972E59 /* FirstViewController.swift */,
@@ -77,6 +78,13 @@
 				76725CF8239EF57E0043F2EF /* Documents.swift */,
 			);
 			path = "Document Manager";
+			sourceTree = "<group>";
+		};
+		76DB8C0123A1ABA600B8DB34 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
