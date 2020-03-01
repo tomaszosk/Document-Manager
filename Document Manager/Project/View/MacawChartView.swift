@@ -12,7 +12,7 @@ import Macaw
 class MacawChartView: MacawView {
     
     static let allDocuments = createDummyData()
-    static let maxValue = 600
+    static let maxValue = 6000
     static let maxValueLineHeight = 180
     static let lineWidth: Double = 275
     
@@ -75,44 +75,32 @@ class MacawChartView: MacawView {
     }
     
     private static func createBars() -> Group {
-        return Group()
+        let fill = LinearGradient(degree: 90, from: Color(val: 0xff4704), to: Color(val: 0xff4704).with(a: 0.33))
+        let items = adjustedData.map { _ in Group() }
+        
+        animations = items.enumerated().map { (i: Int, item: Group) in
+            item.contentsVar.animation(delay: Double(i) * 0.1) { t in
+                let height = adjustedData[i] * t
+                let rect = Rect(x: Double(i) * 50 + 25, y: 200 - height, w: 30, h: height)
+                
+                return [rect.fill(with: fill)]
+            }
+        }
+        
+        return items.group()
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    static func playAnimations() {
+        animations.combine().play()
+    }
     
     private static func createDummyData() -> [DocumentsCount] {
-        let one    = DocumentsCount(documentCountNumber: "Typ 1", typeCount: 3)
-        let two    = DocumentsCount(documentCountNumber: "Typ 2", typeCount: 5)
-        let three  = DocumentsCount(documentCountNumber: "Typ 3", typeCount: 1)
-        let four   = DocumentsCount(documentCountNumber: "Typ 4", typeCount: 9)
-        let five   = DocumentsCount(documentCountNumber: "Typ 5", typeCount: 4)
-        
+        let one    = DocumentsCount(documentCountNumber: "Typ 1", typeCount: 3456)
+        let two    = DocumentsCount(documentCountNumber: "Typ 2", typeCount: 5200)
+        let three  = DocumentsCount(documentCountNumber: "Typ 3", typeCount: 4250)
+        let four   = DocumentsCount(documentCountNumber: "Typ 4", typeCount: 3688)
+        let five   = DocumentsCount(documentCountNumber: "Typ 5", typeCount: 4823)
+
         return [one, two, three, four, five]
     }
 }

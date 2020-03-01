@@ -18,5 +18,6 @@ class ReportViewController: UIViewController {
     }
 
     @IBAction func showChartButtonTapped(_ sender: UIButton) {
+        MacawChartView.playAnimations()
     }
 }
