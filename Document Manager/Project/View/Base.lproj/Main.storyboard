@@ -110,22 +110,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwa dokumentu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYj-kp-BMr">
-                                <rect key="frame" x="20" y="161" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwa dokumentu" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JYj-kp-BMr">
+                                <rect key="frame" x="20" y="164" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nazwa dokumentu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp3-gc-I14">
-                                <rect key="frame" x="20" y="127" width="176" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nazwa dokumentu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qp3-gc-I14">
+                                <rect key="frame" x="20" y="128" width="176" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-mh-kx1">
-                                <rect key="frame" x="20" y="275" width="374" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-mh-kx1">
+                                <rect key="frame" x="20" y="723" width="374" height="60"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="Dodaj">
@@ -137,6 +134,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y7A-Ji-eLk" firstAttribute="bottom" secondItem="gF2-mh-kx1" secondAttribute="bottom" constant="30" id="7Qr-pp-8YN"/>
+                            <constraint firstItem="y7A-Ji-eLk" firstAttribute="trailing" secondItem="qp3-gc-I14" secondAttribute="trailing" constant="218" id="A8R-DK-OKW"/>
+                            <constraint firstItem="qp3-gc-I14" firstAttribute="top" secondItem="y7A-Ji-eLk" secondAttribute="top" constant="40" id="Jn8-pC-YTd"/>
+                            <constraint firstItem="gF2-mh-kx1" firstAttribute="leading" secondItem="y7A-Ji-eLk" secondAttribute="leading" constant="20" id="Nnf-hO-AFg"/>
+                            <constraint firstItem="JYj-kp-BMr" firstAttribute="top" secondItem="qp3-gc-I14" secondAttribute="bottom" constant="10" id="RlC-uv-fUY"/>
+                            <constraint firstItem="qp3-gc-I14" firstAttribute="leading" secondItem="y7A-Ji-eLk" secondAttribute="leading" constant="20" id="Van-Zd-9pV"/>
+                            <constraint firstItem="y7A-Ji-eLk" firstAttribute="trailing" secondItem="gF2-mh-kx1" secondAttribute="trailing" constant="20" id="p0i-PY-Ay4"/>
+                            <constraint firstItem="y7A-Ji-eLk" firstAttribute="trailing" secondItem="JYj-kp-BMr" secondAttribute="trailing" constant="20" id="vPT-Ag-jMS"/>
+                            <constraint firstItem="JYj-kp-BMr" firstAttribute="leading" secondItem="y7A-Ji-eLk" secondAttribute="leading" constant="20" id="veV-g1-KDj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="y7A-Ji-eLk"/>
                     </view>
                     <navigationItem key="navigationItem" id="4tk-0i-m0t"/>
@@ -168,18 +176,59 @@
         <!--Raport-->
         <scene sceneID="wJ6-w9-Qip">
             <objects>
-                <viewController id="KaB-gc-0Kz" sceneMemberID="viewController">
+                <viewController id="KaB-gc-0Kz" customClass="ReportViewController" customModule="Document_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GaB-Vh-pJD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9YK-vi-gpI" customClass="MacawChartView" customModule="Document_Manager" customModuleProvider="target">
+                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9YK-vi-gpI" secondAttribute="height" multiplier="1:1" id="GMx-D7-TXa"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k1-TE-wVi">
+                                <rect key="frame" x="66" y="665" width="283" height="57"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Generuj raport">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showChartButtonTapped:" destination="KaB-gc-0Kz" eventType="touchUpInside" id="p12-51-oFF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ilość dokumentów" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-zO-Rr2">
+                                <rect key="frame" x="90" y="175" width="234" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d0s-zO-Rr2" firstAttribute="leading" secondItem="dXq-lH-vdZ" secondAttribute="leading" constant="90" id="5Ek-kQ-eUo"/>
+                            <constraint firstItem="dXq-lH-vdZ" firstAttribute="trailing" secondItem="9YK-vi-gpI" secondAttribute="trailing" constant="20" id="7de-qv-6OJ"/>
+                            <constraint firstItem="9YK-vi-gpI" firstAttribute="leading" secondItem="dXq-lH-vdZ" secondAttribute="leading" constant="20" id="9BC-o6-IFy"/>
+                            <constraint firstItem="2k1-TE-wVi" firstAttribute="top" secondItem="9YK-vi-gpI" secondAttribute="bottom" constant="30" id="9U8-uM-Sud"/>
+                            <constraint firstItem="dXq-lH-vdZ" firstAttribute="trailing" secondItem="2k1-TE-wVi" secondAttribute="trailing" constant="65" id="BPD-aW-vjj"/>
+                            <constraint firstItem="9YK-vi-gpI" firstAttribute="centerY" secondItem="GaB-Vh-pJD" secondAttribute="centerY" id="CNd-56-0tu"/>
+                            <constraint firstItem="dXq-lH-vdZ" firstAttribute="trailing" secondItem="d0s-zO-Rr2" secondAttribute="trailing" constant="90" id="CzR-LU-Grg"/>
+                            <constraint firstItem="9YK-vi-gpI" firstAttribute="top" secondItem="d0s-zO-Rr2" secondAttribute="bottom" constant="50" id="RGB-rr-foA"/>
+                            <constraint firstItem="2k1-TE-wVi" firstAttribute="leading" secondItem="dXq-lH-vdZ" secondAttribute="leading" constant="66" id="V8i-Gc-9NY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dXq-lH-vdZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Raport" image="chart.bar.fill" catalog="system" id="US3-JV-CaS"/>
+                    <connections>
+                        <outlet property="chartView" destination="9YK-vi-gpI" id="deL-yE-0cb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hm-sV-P9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="1088"/>
+            <point key="canvasLocation" x="747.82608695652175" y="1087.5"/>
         </scene>
         <!--Szukaj-->
         <scene sceneID="Fx1-T0-ahM">
