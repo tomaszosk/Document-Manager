@@ -9,6 +9,6 @@
 import Foundation
 
 struct DocumentsCount {
-    var documentCoumntNumber: String
+    var documentCountNumber: String
     var typeCount: Double
 }

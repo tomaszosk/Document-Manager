@@ -58,7 +58,20 @@ class MacawChartView: MacawView {
     }
     
     private static func addXAxisItems() -> [Node] {
-        return []
+        let chartBaseY: Double = 200
+        var newNodes: [Node] = []
+        
+        for i in 1...adjustedData.count {
+            let x = (Double(i) * 50)
+            let valueText = Text(text: allDocuments[i-1].documentCountNumber, align: .max, baseline: .mid, place: .move(dx: x, dy: chartBaseY + 15))
+            valueText.fill = Color.white
+            newNodes.append(valueText)
+        }
+        
+        let xAxis = Line(x1: 0, y1: chartBaseY, x2: lineWidth, y2: chartBaseY).stroke(fill: Color.white.with(a: 0.25))
+        newNodes.append(xAxis)
+        
+        return newNodes
     }
     
     private static func createBars() -> Group {
@@ -94,11 +107,11 @@ class MacawChartView: MacawView {
     
     
     private static func createDummyData() -> [DocumentsCount] {
-        let one    = DocumentsCount(documentCoumntNumber: "Typ 1", typeCount: 3)
-        let two    = DocumentsCount(documentCoumntNumber: "Typ 2", typeCount: 5)
-        let three  = DocumentsCount(documentCoumntNumber: "Typ 3", typeCount: 1)
-        let four   = DocumentsCount(documentCoumntNumber: "Typ 4", typeCount: 9)
-        let five   = DocumentsCount(documentCoumntNumber: "Typ 5", typeCount: 4)
+        let one    = DocumentsCount(documentCountNumber: "Typ 1", typeCount: 3)
+        let two    = DocumentsCount(documentCountNumber: "Typ 2", typeCount: 5)
+        let three  = DocumentsCount(documentCountNumber: "Typ 3", typeCount: 1)
+        let four   = DocumentsCount(documentCountNumber: "Typ 4", typeCount: 9)
+        let five   = DocumentsCount(documentCountNumber: "Typ 5", typeCount: 4)
         
         return [one, two, three, four, five]
     }
