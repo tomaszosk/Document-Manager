@@ -3,11 +3,9 @@
 
 target 'Document Manager' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+   use_frameworks!
 
   # Pods for Document Manager
-  pod 'Charts'
-  pod 'TinyConstraints'
   pod 'Macaw', '0.9.5'
 
 end

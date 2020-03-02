@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5CEBC552A1F0675D606C5B07 /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */; };
 		7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3C8235CF80F00972E59 /* AppDelegate.swift */; };
 		7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CA235CF80F00972E59 /* SceneDelegate.swift */; };
 		7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CC235CF80F00972E59 /* FirstViewController.swift */; };
@@ -16,13 +15,29 @@
 		7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D3235CF81200972E59 /* Assets.xcassets */; };
 		7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D5235CF81200972E59 /* LaunchScreen.storyboard */; };
 		764AC4D3235DBA9600F23329 /* AddDocControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */; };
-		76521D72240C2A12001D59F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 76521D71240C2A12001D59F7 /* Podfile */; };
 		76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D73240C34F9001D59F7 /* DocumentsCount.swift */; };
 		76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D75240C364E001D59F7 /* ReportViewController.swift */; };
 		76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D77240C383D001D59F7 /* MacawChartView.swift */; };
+		76521D9D240C5BC3001D59F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 76521D71240C2A12001D59F7 /* Podfile */; };
+		76521DA2240C5D41001D59F7 /* Pods_Document_Manager.framework in Resources */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
+		76521DA5240C5D5D001D59F7 /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
+		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
 		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
 		76725CF9239EF57E0043F2EF /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF8239EF57E0043F2EF /* Documents.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76521DA7240C5D5D001D59F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7626C3C5235CF80F00972E59 /* Document Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Document Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,14 +50,25 @@
 		7626C3D6235CF81200972E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7626C3D8235CF81200972E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocControllerViewController.swift; sourceTree = "<group>"; };
-		76521D71240C2A12001D59F7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		76521D71240C2A12001D59F7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		76521D73240C34F9001D59F7 /* DocumentsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsCount.swift; sourceTree = "<group>"; };
 		76521D75240C364E001D59F7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		76521D77240C383D001D59F7 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
+		76521D7C240C50AC001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D7F240C50B5001D59F7 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D82240C50C9001D59F7 /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D85240C5135001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D88240C515B001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D91240C5345001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D94240C577B001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521D9A240C5B45001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521DA8240D402C001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTypes.swift; sourceTree = "<group>"; };
 		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		76725CF8239EF57E0043F2EF /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 		8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Document_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		947F5B31FFAB5B8AC6E87B28 /* Pods-Document Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Document Manager.debug.xcconfig"; path = "Target Support Files/Pods-Document Manager/Pods-Document Manager.debug.xcconfig"; sourceTree = "<group>"; };
+		B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Document_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0200E65770DA3567CBD38A3 /* Pods-Document Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Document Manager.release.xcconfig"; path = "Target Support Files/Pods-Document Manager/Pods-Document Manager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CEBC552A1F0675D606C5B07 /* Pods_Document_Manager.framework in Frameworks */,
+				76521DA5240C5D5D001D59F7 /* Pods_Document_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +92,7 @@
 				76521D71240C2A12001D59F7 /* Podfile */,
 				C720BBF2E9CAE5ED94E4353A /* Pods */,
 				DDF243A56B3710FAFFB30EE0 /* Frameworks */,
+				76521D90240C5250001D59F7 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +121,7 @@
 				76725CF6239EF4910043F2EF /* Document.swift */,
 				76725CF8239EF57E0043F2EF /* Documents.swift */,
 				76521D73240C34F9001D59F7 /* DocumentsCount.swift */,
+				76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,12 +148,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		76521D90240C5250001D59F7 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		76DB8C0123A1ABA600B8DB34 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				76521D70240C222A001D59F7 /* View */,
-				76521D6F240C2207001D59F7 /* Controller */,
 				76521D6D240C21E3001D59F7 /* Model */,
+				76521D6F240C2207001D59F7 /* Controller */,
+				76521D70240C222A001D59F7 /* View */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -142,7 +178,16 @@
 		DDF243A56B3710FAFFB30EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */,
+				76521DA8240D402C001D59F7 /* Macaw.framework */,
+				76521D9A240C5B45001D59F7 /* Macaw.framework */,
+				76521D94240C577B001D59F7 /* Macaw.framework */,
+				76521D91240C5345001D59F7 /* Macaw.framework */,
+				76521D88240C515B001D59F7 /* Macaw.framework */,
+				76521D85240C5135001D59F7 /* Macaw.framework */,
+				76521D82240C50C9001D59F7 /* SWXMLHash.framework */,
+				76521D7F240C50B5001D59F7 /* TinyConstraints.framework */,
+				76521D7C240C50AC001D59F7 /* Macaw.framework */,
+				B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,7 +203,8 @@
 				7626C3C1235CF80F00972E59 /* Sources */,
 				7626C3C2235CF80F00972E59 /* Frameworks */,
 				7626C3C3235CF80F00972E59 /* Resources */,
-				348F3B927E8ACA241FA29C0C /* [CP] Embed Pods Frameworks */,
+				37631DB1E8CB950616D76533 /* [CP] Embed Pods Frameworks */,
+				76521DA7240C5D5D001D59F7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,9 +253,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76521DA2240C5D41001D59F7 /* Pods_Document_Manager.framework in Resources */,
+				76521D9D240C5BC3001D59F7 /* Podfile in Resources */,
 				7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */,
 				7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */,
-				76521D72240C2A12001D59F7 /* Podfile in Resources */,
 				7626C3D2235CF80F00972E59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,7 +264,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		348F3B927E8ACA241FA29C0C /* [CP] Embed Pods Frameworks */ = {
+		37631DB1E8CB950616D76533 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -270,6 +317,7 @@
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */,
+				76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */,
 				7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */,
 				764AC4D3235DBA9600F23329 /* AddDocControllerViewController.swift in Sources */,
 				7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */,
