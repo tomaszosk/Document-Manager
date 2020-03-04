@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
     
-    var fullDocumentList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4", "Dokument 55"]
+    var fullDocumentList = ["Dokument1", "Dokument2", "Dokument3", "Dokument4", "Dokument5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

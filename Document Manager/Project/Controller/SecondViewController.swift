@@ -45,16 +45,30 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
         let tabBar = tabBarController as! BaseTabBarController
-        docList = [String](tabBar.fullDocumentList)
+//        docList = [String](tabBar.fullDocumentList)
+        docList = tabBar.fullDocumentList
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    override func viewDidAppear(_ animated: Bool) {
+//        let tabBar = tabBarController as! BaseTabBarController
+//        docList = [String](tabBar.fullDocumentList)
+
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         let tabBar = tabBarController as! BaseTabBarController
-        tabBar.fullDocumentList = [String](docList)
+//        tabBar.fullDocumentList = [String](docList)
+        tabBar.fullDocumentList = docList
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+                let tabBar = tabBarController as! BaseTabBarController
+        //        tabBar.fullDocumentList = [String](docList)
+                tabBar.fullDocumentList = docList
+  
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
