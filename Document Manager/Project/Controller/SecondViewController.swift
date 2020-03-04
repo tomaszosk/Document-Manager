@@ -11,7 +11,9 @@ import UIKit
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
     
-    var docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
+//    var docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
+    var docList: [String] = []
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -41,7 +43,18 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let tabBar = tabBarController as! BaseTabBarController
+        docList = [String](tabBar.fullDocumentList)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let tabBar = tabBarController as! BaseTabBarController
+        tabBar.fullDocumentList = [String](docList)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
