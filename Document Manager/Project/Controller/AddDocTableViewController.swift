@@ -11,29 +11,69 @@ import UIKit
 class AddDocTableViewController: UITableViewController {
     
     var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
+    let docTypesArray: [String] = ["Raport", "Paragon", "Faktura", "Protokół"]
+    var selectedType = ""
+    
     var delegate: AddDoc?
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var typeTextField: UITextField!
+    @IBOutlet weak var typePickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        createTypePicker()
+        createToolbar()
+        
+//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func createTypePicker() {
+        
+        let typePicker = UIPickerView()
+        typePicker.delegate = self
+        
+        typeTextField.inputView = typePicker
+        
+        typePicker.backgroundColor = .black
+    }
+    
+    func createToolbar() {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddDocTableViewController.dismissKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        typeTextField.inputAccessoryView = toolBar
+        
+        toolBar.barTintColor = .black
+        toolBar.tintColor = .white
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +119,6 @@ class AddDocTableViewController: UITableViewController {
         return true
     }
     */
-
     
     // MARK: - Navigation
      
@@ -90,6 +129,16 @@ class AddDocTableViewController: UITableViewController {
             navigationController?.popViewController(animated: true)
 //        }
      }
+    
+    // MARK: Helper Methods
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
+    }
+    
      /*
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -99,4 +148,45 @@ class AddDocTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension AddDocTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return docTypesArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return docTypesArray[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedType = docTypesArray[row]
+        typeTextField.text = selectedType
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label: UILabel
+        
+        if let view = view as? UILabel {
+            label = view
+        } else {
+            label = UILabel()
+        }
+        
+        label.textColor = .green
+        label.textAlignment = .center
+        label.font = UIFont(name: "Menlo-Regular", size: 17)
+        
+        label.text = docTypesArray[row]
+        
+        return label
+    }
 }
