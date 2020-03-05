@@ -6,6 +6,6 @@ target 'Document Manager' do
    use_frameworks!
 
   # Pods for Document Manager
-  pod 'Macaw', '0.9.5'
+  # pod 'Macaw', '0.9.5'
 
 end

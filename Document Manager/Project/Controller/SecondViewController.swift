@@ -22,18 +22,6 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         docList = tabBar.fullDocumentList
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-////        let tabBar = tabBarController as! BaseTabBarController
-////        docList = [String](tabBar.fullDocumentList)
-//
-//
-//    }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        let tabBar = tabBarController as! BaseTabBarController
-//        tabBar.fullDocumentList = docList
-//    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         let tabBar = tabBarController as! BaseTabBarController
         tabBar.fullDocumentList = docList

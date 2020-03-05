@@ -8,9 +8,9 @@
 
 import UIKit
 
-protocol AddDoc {
-    func addDoc(document: Document)
-}
+//protocol AddDoc {
+//    func addDoc(document: Document)
+//}
 
 class AddDocControllerViewController: UIViewController {
 

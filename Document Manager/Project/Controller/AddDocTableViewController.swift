@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddDoc {
+    func addDoc(document: Document)
+}
+
 class AddDocTableViewController: UITableViewController {
     
     var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
@@ -26,7 +30,6 @@ class AddDocTableViewController: UITableViewController {
         createTypePicker()
         createToolbar()
         
-//        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -123,11 +126,8 @@ class AddDocTableViewController: UITableViewController {
     // MARK: - Navigation
      
      @IBAction func AddDocument(_ sender: UIBarButtonItem) {
-//        if docNameOutlet.text != "" {
-//            newDocument.name = docNameOutlet.text!
             delegate?.addDoc(document: newDocument)
             navigationController?.popViewController(animated: true)
-//        }
      }
     
     // MARK: Helper Methods

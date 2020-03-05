@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		7626C3D2235CF80F00972E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D0235CF80F00972E59 /* Main.storyboard */; };
 		7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D3235CF81200972E59 /* Assets.xcassets */; };
 		7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D5235CF81200972E59 /* LaunchScreen.storyboard */; };
-		764AC4D3235DBA9600F23329 /* AddDocControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */; };
 		76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D73240C34F9001D59F7 /* DocumentsCount.swift */; };
 		76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D75240C364E001D59F7 /* ReportViewController.swift */; };
 		76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D77240C383D001D59F7 /* MacawChartView.swift */; };
@@ -53,7 +52,6 @@
 		7626C3D3235CF81200972E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7626C3D6235CF81200972E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7626C3D8235CF81200972E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocControllerViewController.swift; sourceTree = "<group>"; };
 		76521D71240C2A12001D59F7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		76521D73240C34F9001D59F7 /* DocumentsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsCount.swift; sourceTree = "<group>"; };
 		76521D75240C364E001D59F7 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 				76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */,
 				7626C3CC235CF80F00972E59 /* FirstViewController.swift */,
 				7626C3CE235CF80F00972E59 /* SecondViewController.swift */,
-				764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */,
 				76521D75240C364E001D59F7 /* ReportViewController.swift */,
 				76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */,
 				76EC175E24117A5900761B5F /* AddDocTableViewController.swift */,
@@ -313,7 +310,6 @@
 				76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */,
 				7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */,
 				76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */,
-				764AC4D3235DBA9600F23329 /* AddDocControllerViewController.swift in Sources */,
 				7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
