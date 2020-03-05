@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Macaw
+//import Macaw
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
@@ -65,7 +65,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddDocControllerViewController
+        let vc = segue.destination as! AddDocTableViewController
         vc.delegate = self
     }
     

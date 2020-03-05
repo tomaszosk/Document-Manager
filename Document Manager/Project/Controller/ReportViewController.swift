@@ -13,11 +13,11 @@ class ReportViewController: UIViewController {
     var reportDocList = [Document]()
     @IBOutlet weak var docNumber: UILabel!
     
-    @IBOutlet private var chartView: MacawChartView!
+//    @IBOutlet private var chartView: MacawChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chartView.contentMode = .scaleAspectFit
+//        chartView.contentMode = .scaleAspectFit
         
         let tabBar = tabBarController as! BaseTabBarController
         reportDocList = tabBar.fullDocumentList
@@ -31,6 +31,6 @@ class ReportViewController: UIViewController {
     }
 
     @IBAction func showChartButtonTapped(_ sender: UIButton) {
-        MacawChartView.playAnimations()
+//        MacawChartView.playAnimations()
     }
 }
