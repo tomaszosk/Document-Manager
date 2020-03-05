@@ -20,7 +20,6 @@ class SearchCollectionViewController: UICollectionViewController {
         
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
-        print("VDL w Search \(searchDocList.count)")
         docsNumber.text = String(searchDocList.count)
 
         // Uncomment the following line to preserve selection between presentations
@@ -36,7 +35,6 @@ class SearchCollectionViewController: UICollectionViewController {
 //        docsNumber.text = String(searchDocList.count)
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
-        print("VWA w Search \(searchDocList.count)")
         docsNumber.text = String(searchDocList.count)
     }
 

@@ -23,7 +23,6 @@
 		76521DA5240C5D5D001D59F7 /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
 		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
-		76725CF9239EF57E0043F2EF /* Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF8239EF57E0043F2EF /* Documents.swift */; };
 		76A474112411589A00FDAC4C /* Pods_Document_Manager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */; };
 		76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */; };
@@ -69,7 +68,6 @@
 		76521DA8240D402C001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTypes.swift; sourceTree = "<group>"; };
 		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		76725CF8239EF57E0043F2EF /* Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Documents.swift; sourceTree = "<group>"; };
 		76A47412241158EA00FDAC4C /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
@@ -126,10 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				76725CF6239EF4910043F2EF /* Document.swift */,
-				76725CF8239EF57E0043F2EF /* Documents.swift */,
 				76521D73240C34F9001D59F7 /* DocumentsCount.swift */,
 				76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */,
-				76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +133,7 @@
 		76521D6F240C2207001D59F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */,
 				7626C3CC235CF80F00972E59 /* FirstViewController.swift */,
 				7626C3CE235CF80F00972E59 /* SecondViewController.swift */,
 				764AC4D2235DBA9600F23329 /* AddDocControllerViewController.swift */,
@@ -322,7 +319,6 @@
 			files = (
 				7626C3CF235CF80F00972E59 /* SecondViewController.swift in Sources */,
 				76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */,
-				76725CF9239EF57E0043F2EF /* Documents.swift in Sources */,
 				76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */,
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,

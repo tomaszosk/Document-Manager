@@ -11,10 +11,35 @@ import Macaw
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
-//    var docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
     var docList: [Document] = []
     
+    @IBOutlet weak var docTableView: UITableView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tabBar = tabBarController as! BaseTabBarController
+        docList = tabBar.fullDocumentList
+    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+////        let tabBar = tabBarController as! BaseTabBarController
+////        docList = [String](tabBar.fullDocumentList)
+//
+//
+//    }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        let tabBar = tabBarController as! BaseTabBarController
+//        tabBar.fullDocumentList = docList
+//    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        let tabBar = tabBarController as! BaseTabBarController
+        tabBar.fullDocumentList = docList
+    }
+    
+    // MARK: Table View Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return (docList.count)
@@ -38,50 +63,15 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-    
-    @IBOutlet weak var docTableView: UITableView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let tabBar = tabBarController as! BaseTabBarController
-//        docList = [String](tabBar.fullDocumentList)
-        docList = tabBar.fullDocumentList
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        let tabBar = tabBarController as! BaseTabBarController
-//        docList = [String](tabBar.fullDocumentList)
-
-
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        let tabBar = tabBarController as! BaseTabBarController
-//        tabBar.fullDocumentList = [String](docList)
-        tabBar.fullDocumentList = docList
-
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-                let tabBar = tabBarController as! BaseTabBarController
-        //        tabBar.fullDocumentList = [String](docList)
-                tabBar.fullDocumentList = docList
-  
-    }
-    
+    // MARK: Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddDocControllerViewController
         vc.delegate = self
     }
     
-    
     func addDoc(document: Document) {
         docList.append(document)
         docTableView.reloadData()
     }
-
-
 }
 

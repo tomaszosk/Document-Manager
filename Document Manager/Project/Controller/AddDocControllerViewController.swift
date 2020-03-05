@@ -19,6 +19,13 @@ class AddDocControllerViewController: UIViewController {
     
     var delegate: AddDoc?
     
+    @IBAction func AddDocument(_ sender: UIBarButtonItem) {
+        if docNameOutlet.text != "" {
+            newDocument.name = docNameOutlet.text!
+            delegate?.addDoc(document: newDocument)
+            navigationController?.popViewController(animated: true)
+        }
+    }
     @IBAction func AddDocAction(_ sender: UIButton) {
         if docNameOutlet.text != "" {
             newDocument.name = docNameOutlet.text!
@@ -26,13 +33,10 @@ class AddDocControllerViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
     }
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        // Do any additional setup after loading the view.
+//    }
 
 }

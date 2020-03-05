@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
-        <!--Second-->
+        <!--Lista dokumentów-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="Document_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,8 +58,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5I-2v-DTN">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e5I-2v-DTN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="TDc-5w-jVG">
@@ -91,7 +91,7 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
-                    <navigationItem key="navigationItem" id="aff-2i-GDs">
+                    <navigationItem key="navigationItem" title="Lista dokumentów" id="aff-2i-GDs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TI7-l1-3y7">
                             <connections>
                                 <segue destination="RlT-ym-mWl" kind="show" id="dvR-PY-mfo"/>
@@ -104,9 +104,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459" y="362"/>
+            <point key="canvasLocation" x="1457.9710144927537" y="361.60714285714283"/>
         </scene>
-        <!--Add Doc Controller View Controller-->
+        <!--Dodawanie dokumentu-->
         <scene sceneID="Hav-RZ-gxZ">
             <objects>
                 <viewController id="RlT-ym-mWl" customClass="AddDocControllerViewController" customModule="Document_Manager" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,33 +125,57 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF2-mh-kx1">
-                                <rect key="frame" x="20" y="723" width="374" height="60"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Dodaj">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="AddDocAction:" destination="RlT-ym-mWl" eventType="touchUpInside" id="81N-cD-iJz"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="L3D-BA-bYL">
+                                <rect key="frame" x="0.0" y="206" width="414" height="607"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ppv-Ui-a4x">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="1.1920928955078125e-07"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ppv-Ui-a4x" id="aFJ-Hq-ilD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zYy-L9-k3R">
+                                        <rect key="frame" x="0.0" y="28.00000011920929" width="414" height="1.1920928955078125e-07"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zYy-L9-k3R" id="ljX-Jq-XrM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="HK1-zl-WfE">
+                                        <rect key="frame" x="0.0" y="28.000000238418579" width="414" height="1.1920928955078125e-07"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HK1-zl-WfE" id="9Yu-ix-pO5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="y7A-Ji-eLk" firstAttribute="bottom" secondItem="gF2-mh-kx1" secondAttribute="bottom" constant="30" id="7Qr-pp-8YN"/>
                             <constraint firstItem="y7A-Ji-eLk" firstAttribute="trailing" secondItem="qp3-gc-I14" secondAttribute="trailing" constant="218" id="A8R-DK-OKW"/>
                             <constraint firstItem="qp3-gc-I14" firstAttribute="top" secondItem="y7A-Ji-eLk" secondAttribute="top" constant="40" id="Jn8-pC-YTd"/>
-                            <constraint firstItem="gF2-mh-kx1" firstAttribute="leading" secondItem="y7A-Ji-eLk" secondAttribute="leading" constant="20" id="Nnf-hO-AFg"/>
                             <constraint firstItem="JYj-kp-BMr" firstAttribute="top" secondItem="qp3-gc-I14" secondAttribute="bottom" constant="10" id="RlC-uv-fUY"/>
                             <constraint firstItem="qp3-gc-I14" firstAttribute="leading" secondItem="y7A-Ji-eLk" secondAttribute="leading" constant="20" id="Van-Zd-9pV"/>
-                            <constraint firstItem="y7A-Ji-eLk" firstAttribute="trailing" secondItem="gF2-mh-kx1" secondAttribute="trailing" constant="20" id="p0i-PY-Ay4"/>
                             <constraint firstItem="y7A-Ji-eLk" firstAttribute="trailing" secondItem="JYj-kp-BMr" secondAttribute="trailing" constant="20" id="vPT-Ag-jMS"/>
                             <constraint firstItem="JYj-kp-BMr" firstAttribute="leading" secondItem="y7A-Ji-eLk" secondAttribute="leading" constant="20" id="veV-g1-KDj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="y7A-Ji-eLk"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4tk-0i-m0t"/>
+                    <navigationItem key="navigationItem" title="Dodawanie dokumentu" id="4tk-0i-m0t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="G8Y-Hq-84J">
+                            <connections>
+                                <action selector="AddDocument:" destination="RlT-ym-mWl" id="rkO-Ec-PdH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="docNameOutlet" destination="JYj-kp-BMr" id="M2E-JP-yJN"/>
                     </connections>
@@ -159,6 +183,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9P-iC-bdc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2127.536231884058" y="361.60714285714283"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="gbf-N0-eH2">
+            <objects>
+                <tableViewController id="mkl-2Q-VDC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mI6-XT-vy8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="HsX-kX-ItD">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HsX-kX-ItD" id="DUE-Gh-AGF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mkl-2Q-VDC" id="gse-LK-rfu"/>
+                            <outlet property="delegate" destination="mkl-2Q-VDC" id="qHi-uV-JSR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PN2-Wq-oA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="361"/>
         </scene>
         <!--Lista dokumentów-->
         <scene sceneID="yMY-Dg-cfj">
