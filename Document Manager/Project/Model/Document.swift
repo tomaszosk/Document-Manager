@@ -3,10 +3,10 @@ import Foundation
 class Document {
     var name: String
     var size: Int
-    var dateAdded: DateFormatter
+    var dateAdded: String
     var privacy: String
     
-    init(name: String, size: Int, dateAdded: DateFormatter, privacy: String) {
+    init(name: String, size: Int, dateAdded: String, privacy: String) {
         self.name = name
         self.size = size
         self.dateAdded = dateAdded

@@ -10,7 +10,7 @@ import UIKit
 
 class ReportViewController: UIViewController {
     
-    var reportDocList: [String] = []
+    var reportDocList = [Document]()
     @IBOutlet weak var docNumber: UILabel!
     
     @IBOutlet private var chartView: MacawChartView!

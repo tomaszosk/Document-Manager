@@ -9,18 +9,20 @@
 import UIKit
 
 protocol AddDoc {
-    func addDoc(name: String)
+    func addDoc(document: Document)
 }
 
 class AddDocControllerViewController: UIViewController {
 
     @IBOutlet weak var docNameOutlet: UITextField!
+    var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
     
     var delegate: AddDoc?
     
     @IBAction func AddDocAction(_ sender: UIButton) {
         if docNameOutlet.text != "" {
-            delegate?.addDoc(name: docNameOutlet.text!)
+            newDocument.name = docNameOutlet.text!
+            delegate?.addDoc(document: newDocument)
             navigationController?.popViewController(animated: true)
         }
     }

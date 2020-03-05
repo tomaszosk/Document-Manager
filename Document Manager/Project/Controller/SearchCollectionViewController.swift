@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class SearchCollectionViewController: UICollectionViewController {
     
-    var searchDocList: [String] = []
+    var searchDocList = [Document]()
     @IBOutlet weak var docsNumber: UILabel!
     
     override func viewDidLoad() {

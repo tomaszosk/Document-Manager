@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import Macaw
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
-    
 //    var docList = ["Dokument 1", "Dokument 2", "Dokument 3", "Dokument 4"]
-    var docList: [String] = []
+    var docList: [Document] = []
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +24,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
-        cell.textLabel?.text = docList[indexPath.row]
+        cell.textLabel?.text = docList[indexPath.row].name
         
         return(cell)
     }
@@ -77,8 +77,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    func addDoc(name: String) {
-        docList.append(name)
+    func addDoc(document: Document) {
+        docList.append(document)
         docTableView.reloadData()
     }
 
