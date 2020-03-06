@@ -15,7 +15,7 @@ protocol AddDoc {
 class AddDocTableViewController: UITableViewController {
     
     var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
-    let docTypesArray: [String] = ["Raport", "Paragon", "Faktura", "Protokół"]
+    let docTypesArray: [String] = ["Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
     var selectedType = ""
     
     var delegate: AddDoc?
@@ -44,7 +44,7 @@ class AddDocTableViewController: UITableViewController {
         
         typeTextField.inputView = typePicker
         
-        typePicker.backgroundColor = .black
+        typePicker.backgroundColor = .systemFill
     }
     
     func createToolbar() {
@@ -58,8 +58,8 @@ class AddDocTableViewController: UITableViewController {
         
         typeTextField.inputAccessoryView = toolBar
         
-        toolBar.barTintColor = .black
-        toolBar.tintColor = .white
+        toolBar.barTintColor = .systemFill
+        toolBar.tintColor = .black
     }
     
     @objc func dismissKeyboard() {
@@ -181,9 +181,8 @@ extension AddDocTableViewController: UIPickerViewDelegate, UIPickerViewDataSourc
             label = UILabel()
         }
         
-        label.textColor = .green
+        label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont(name: "Menlo-Regular", size: 17)
         
         label.text = docTypesArray[row]
         
