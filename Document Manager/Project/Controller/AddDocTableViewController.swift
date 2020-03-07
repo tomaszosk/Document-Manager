@@ -12,7 +12,7 @@ protocol AddDoc {
     func addDoc(document: Document)
 }
 
-class AddDocTableViewController: UITableViewController {
+class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
     let docTypesArray: [String] = ["Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
@@ -25,6 +25,30 @@ class AddDocTableViewController: UITableViewController {
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var typePickerView: UIPickerView!
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var scanImageView: UIImageView!
+    @IBOutlet weak var importLabel: UIButton!
+    
+    @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        
+        image.allowsEditing = false
+        
+        self.present(image, animated: true) {
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            scanImageView.image = image
+        } else {
+          return
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +56,7 @@ class AddDocTableViewController: UITableViewController {
         createTypePicker()
         createToolbar()
         createDatePicker()
+        setImportLabel()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddDocTableViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
@@ -41,6 +66,12 @@ class AddDocTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func setImportLabel() {
+        importLabel.layer.cornerRadius = 10
+        importLabel.clipsToBounds = true
+        importLabel.backgroundColor = .lightGray
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {

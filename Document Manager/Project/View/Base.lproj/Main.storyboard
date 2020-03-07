@@ -166,28 +166,29 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Skan dokumentu:" footerTitle="" id="fwR-RW-IOn">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="K2n-nV-mvZ" detailTextLabel="FIN-8g-NaG" style="IBUITableViewCellStyleValue1" id="ge5-WE-SF8">
-                                        <rect key="frame" x="20" y="273.33333206176758" width="374" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="215" id="ge5-WE-SF8">
+                                        <rect key="frame" x="20" y="273.33333206176758" width="374" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ge5-WE-SF8" id="zpE-ek-ZT2">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ge5-WE-SF8" id="zpE-ek-ZT2">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Dodaj zdjęcie:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K2n-nV-mvZ">
-                                                    <rect key="frame" x="20.000000000000007" y="11.999999999999998" width="107.66666666666667" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Wybierz z dysku" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FIN-8g-NaG">
-                                                    <rect key="frame" x="228" y="11.999999999999998" width="126" height="20.333333333333332"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qRb-vY-ojI">
+                                                    <rect key="frame" x="94" y="11" width="196" height="158"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ua-LV-gA8">
+                                                    <rect key="frame" x="94" y="177" width="196" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="Importuj z Rolki aparatu">
+                                                        <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="importImage:" destination="mkl-2Q-VDC" eventType="touchUpInside" id="Wse-FS-gxg"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -196,7 +197,7 @@
                             <tableViewSection headerTitle="Data wystawienia:" footerTitle="" id="gFk-C8-j26">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="izM-kX-4oX">
-                                        <rect key="frame" x="20" y="384.33333206176758" width="374" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="555.66666412353516" width="374" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="izM-kX-4oX" id="hhG-5W-s8x">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
@@ -220,7 +221,7 @@
                             <tableViewSection headerTitle="Udostępnij:" footerTitle="" id="dws-e8-S2i">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="XnZ-1n-uLc" detailTextLabel="xjY-53-FYz" style="IBUITableViewCellStyleValue1" id="VYc-0a-u3d">
-                                        <rect key="frame" x="20" y="495.33333206176758" width="374" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="666.66666412353516" width="374" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VYc-0a-u3d" id="wIg-Rd-cgr">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
@@ -261,6 +262,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateTextField" destination="bFW-3f-mAF" id="ABQ-YS-wgd"/>
+                        <outlet property="importLabel" destination="8ua-LV-gA8" id="uom-bS-not"/>
+                        <outlet property="scanImageView" destination="qRb-vY-ojI" id="XdL-m7-TQH"/>
                         <outlet property="typeTextField" destination="RNi-IO-lkJ" id="ats-HB-mO7"/>
                     </connections>
                 </tableViewController>
