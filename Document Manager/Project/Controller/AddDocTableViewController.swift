@@ -17,24 +17,34 @@ class AddDocTableViewController: UITableViewController {
     var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
     let docTypesArray: [String] = ["Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
     var selectedType = ""
+    private var datePicker: UIDatePicker?
     
     var delegate: AddDoc?
     
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var typePickerView: UIPickerView!
+    @IBOutlet weak var dateTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         createTypePicker()
         createToolbar()
+        createDatePicker()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddDocTableViewController.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     func createTypePicker() {
@@ -57,13 +67,29 @@ class AddDocTableViewController: UITableViewController {
         toolBar.isUserInteractionEnabled = true
         
         typeTextField.inputAccessoryView = toolBar
+        dateTextField.inputAccessoryView = toolBar
         
         toolBar.barTintColor = .systemFill
         toolBar.tintColor = .black
     }
     
+    func createDatePicker() {
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(AddDocTableViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        dateTextField.inputView = datePicker
+    }
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        dateTextField.text = dateFormatter.string(from: datePicker.date)
     }
 
     // MARK: - Table view data source
