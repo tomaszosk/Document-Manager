@@ -14,10 +14,11 @@ protocol AddDoc {
 
 class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var newDocument: Document = Document(name: "", size: 0, dateAdded: "", privacy: "")
+    var newDocument: Document = Document(name: "", size: 0, type: "", dateAdded: "", privacy: "")
     let docTypesArray: [String] = ["Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
     var selectedType = ""
     private var datePicker: UIDatePicker?
+    private let documentDescription = ""
     
     var delegate: AddDoc?
     
@@ -56,7 +57,7 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         createTypePicker()
         createToolbar()
         createDatePicker()
-        setImportLabel()
+//        setImportLabel()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddDocTableViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
@@ -122,28 +123,20 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         
         dateTextField.text = dateFormatter.string(from: datePicker.date)
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    @IBAction func emailShareTapped(_ sender: Any) {
+        let stringToShare = documentSharing(documentName: newDocument.name, documentType: newDocument.type, dateCreated: newDocument.dateAdded)
+        let activityController = UIActivityViewController(activityItems: [stringToShare], applicationActivities: nil)
+        
+        activityController.completionWithItemsHandler = { (nil, completed, _, error) in
+            if completed {
+                print("Completed")
+            } else {
+                print("Canceled")
+            }
+        }
+        present(activityController, animated: true)
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -194,6 +187,12 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
             view.endEditing(true)
         }
         sender.cancelsTouchesInView = false
+    }
+    
+    func documentSharing(documentName: String, documentType: String, dateCreated: String) -> String {
+        let shareText = "Dokument o nazwie: \(documentName) i rodzaju: \(documentType) został utworzony w aplikacji dnia: \(dateCreated)"
+        
+        return shareText
     }
     
      /*
