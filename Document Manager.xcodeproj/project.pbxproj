@@ -22,6 +22,11 @@
 		76521DA5240C5D5D001D59F7 /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
 		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
+		76904F542415029F0048C11B /* DMErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F532415029F0048C11B /* DMErrors.swift */; };
+		76904F562415036A0048C11B /* DMAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F552415036A0048C11B /* DMAlertViewController.swift */; };
+		76904F582415040A0048C11B /* DMTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F572415040A0048C11B /* DMTitleLabel.swift */; };
+		76904F5A241504670048C11B /* DMBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F59241504670048C11B /* DMBodyLabel.swift */; };
+		76904F5C241504A30048C11B /* DMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F5B241504A30048C11B /* DMButton.swift */; };
 		76A474112411589A00FDAC4C /* Pods_Document_Manager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */; };
 		76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */; };
@@ -67,6 +72,11 @@
 		76521DA8240D402C001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTypes.swift; sourceTree = "<group>"; };
 		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		76904F532415029F0048C11B /* DMErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMErrors.swift; sourceTree = "<group>"; };
+		76904F552415036A0048C11B /* DMAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAlertViewController.swift; sourceTree = "<group>"; };
+		76904F572415040A0048C11B /* DMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTitleLabel.swift; sourceTree = "<group>"; };
+		76904F59241504670048C11B /* DMBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMBodyLabel.swift; sourceTree = "<group>"; };
+		76904F5B241504A30048C11B /* DMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMButton.swift; sourceTree = "<group>"; };
 		76A47412241158EA00FDAC4C /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +136,7 @@
 				76725CF6239EF4910043F2EF /* Document.swift */,
 				76521D73240C34F9001D59F7 /* DocumentsCount.swift */,
 				76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */,
+				76904F532415029F0048C11B /* DMErrors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 				76521D75240C364E001D59F7 /* ReportViewController.swift */,
 				76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */,
 				76EC175E24117A5900761B5F /* AddDocTableViewController.swift */,
+				76904F552415036A0048C11B /* DMAlertViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,6 +162,9 @@
 				7626C3CA235CF80F00972E59 /* SceneDelegate.swift */,
 				7626C3D0235CF80F00972E59 /* Main.storyboard */,
 				76521D77240C383D001D59F7 /* MacawChartView.swift */,
+				76904F572415040A0048C11B /* DMTitleLabel.swift */,
+				76904F59241504670048C11B /* DMBodyLabel.swift */,
+				76904F5B241504A30048C11B /* DMButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,16 +316,21 @@
 			files = (
 				7626C3CF235CF80F00972E59 /* SecondViewController.swift in Sources */,
 				76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */,
+				76904F562415036A0048C11B /* DMAlertViewController.swift in Sources */,
 				76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */,
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */,
 				76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */,
 				76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */,
+				76904F582415040A0048C11B /* DMTitleLabel.swift in Sources */,
+				76904F542415029F0048C11B /* DMErrors.swift in Sources */,
+				76904F5A241504670048C11B /* DMBodyLabel.swift in Sources */,
 				76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */,
 				7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */,
 				76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */,
 				7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */,
+				76904F5C241504A30048C11B /* DMButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

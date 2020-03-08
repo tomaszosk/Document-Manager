@@ -222,7 +222,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wybierz datę:" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFW-3f-mAF">
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wybierz datę" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFW-3f-mAF">
                                                     <rect key="frame" x="20" y="4.6666679382324219" width="334" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <accessibility key="accessibilityConfiguration">
@@ -281,6 +281,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateTextField" destination="bFW-3f-mAF" id="ABQ-YS-wgd"/>
+                        <outlet property="documentNameTextField" destination="zD3-cF-wNe" id="uJe-G0-Ee3"/>
                         <outlet property="importLabel" destination="8ua-LV-gA8" id="uom-bS-not"/>
                         <outlet property="scanImageView" destination="qRb-vY-ojI" id="XdL-m7-TQH"/>
                         <outlet property="typeTextField" destination="RNi-IO-lkJ" id="ats-HB-mO7"/>

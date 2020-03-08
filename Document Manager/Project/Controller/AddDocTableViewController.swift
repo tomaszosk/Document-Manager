@@ -22,6 +22,7 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     
     var delegate: AddDoc?
     
+    @IBOutlet weak var documentNameTextField: UITextField!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var typeTextField: UITextField!
     @IBOutlet weak var typePickerView: UIPickerView!
@@ -85,7 +86,8 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         typePicker.delegate = self
         
         typeTextField.inputView = typePicker
-        
+//        typeTextField.text = String(typeTextField.inputView!)
+//        typeTextField.text = selectedType
         typePicker.backgroundColor = .systemFill
     }
     
@@ -125,17 +127,24 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     }
     
     @IBAction func emailShareTapped(_ sender: Any) {
-        let stringToShare = documentSharing(documentName: newDocument.name, documentType: newDocument.type, dateCreated: newDocument.dateAdded)
-        let activityController = UIActivityViewController(activityItems: [stringToShare], applicationActivities: nil)
         
-        activityController.completionWithItemsHandler = { (nil, completed, _, error) in
-            if completed {
-                print("Completed")
-            } else {
-                print("Canceled")
+        if (documentNameTextField.text != "") && (typeTextField.text != "Wybierz typ dokumentu") && (dateTextField.text != "Wybierz datę") {
+            let stringToShare = documentSharing(documentName: documentNameTextField.text!, documentType: typeTextField.text!, dateCreated: dateTextField.text!)
+            let activityController = UIActivityViewController(activityItems: [stringToShare], applicationActivities: nil)
+            
+            activityController.completionWithItemsHandler = { (nil, completed, _, error) in
+                if completed {
+                    print("Completed")
+                } else {
+                    print("The user canceled sharing")
+                }
             }
+            present(activityController, animated: true)
+        } else {
+            presentDMLAlertOnMainThread(title: "Puste pola!", message: "Nie można udostępnić. Jedno z pól do uzupełnienia jest puste", buttonTitle: "Ok")
         }
-        present(activityController, animated: true)
+        
+        
     }
 
     /*
@@ -204,6 +213,17 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     }
     */
 
+}
+
+extension UIViewController {
+    func presentDMLAlertOnMainThread(title: String, message: String, buttonTitle: String) {
+        DispatchQueue.main.async {
+            let alertViewController = DMAlertViewController(title: title, message: message, buttonTitle: buttonTitle)
+            alertViewController.modalPresentationStyle = .overFullScreen
+            alertViewController.modalTransitionStyle = .crossDissolve
+            self.present(alertViewController, animated: true)
+        }
+    }
 }
 
 extension AddDocTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
