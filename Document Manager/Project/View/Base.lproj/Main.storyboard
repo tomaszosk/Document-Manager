@@ -193,6 +193,9 @@
                                                     <rect key="frame" x="324" y="120" width="24" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="camera.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="takePictureTapped:" destination="mkl-2Q-VDC" eventType="touchUpInside" id="Kzx-w8-2py"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Importuj" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icd-8J-D48">
                                                     <rect key="frame" x="311" y="72" width="51" height="16"/>

@@ -70,12 +70,6 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    func setImportLabel() {
-        importLabel.layer.cornerRadius = 10
-        importLabel.clipsToBounds = true
-        importLabel.backgroundColor = .lightGray
-    }
-    
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
@@ -146,6 +140,17 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         
         
     }
+    
+    @IBAction func takePictureTapped(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let image = UIImagePickerController()
+            image.delegate = self
+            image.sourceType = UIImagePickerController.SourceType.camera
+            image.allowsEditing = false
+            self.present(image, animated: true, completion: nil)
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
