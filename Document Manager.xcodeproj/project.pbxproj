@@ -19,7 +19,6 @@
 		76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D77240C383D001D59F7 /* MacawChartView.swift */; };
 		76521D9D240C5BC3001D59F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 76521D71240C2A12001D59F7 /* Podfile */; };
 		76521DA2240C5D41001D59F7 /* Pods_Document_Manager.framework in Resources */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
-		76521DA5240C5D5D001D59F7 /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
 		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
 		76904F542415029F0048C11B /* DMErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F532415029F0048C11B /* DMErrors.swift */; };
@@ -27,7 +26,9 @@
 		76904F582415040A0048C11B /* DMTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F572415040A0048C11B /* DMTitleLabel.swift */; };
 		76904F5A241504670048C11B /* DMBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F59241504670048C11B /* DMBodyLabel.swift */; };
 		76904F5C241504A30048C11B /* DMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F5B241504A30048C11B /* DMButton.swift */; };
-		76A474112411589A00FDAC4C /* Pods_Document_Manager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76904F65241534F30048C11B /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */; };
+		76904F66241534F30048C11B /* Pods_Document_Manager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76904F73241553A90048C11B /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F72241553A90048C11B /* BarCell.swift */; };
 		76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */; };
 		76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */; };
 		76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC175E24117A5900761B5F /* AddDocTableViewController.swift */; };
@@ -40,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				76A474112411589A00FDAC4C /* Pods_Document_Manager.framework in Embed Frameworks */,
+				76904F66241534F30048C11B /* Pods_Document_Manager.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +78,9 @@
 		76904F572415040A0048C11B /* DMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTitleLabel.swift; sourceTree = "<group>"; };
 		76904F59241504670048C11B /* DMBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMBodyLabel.swift; sourceTree = "<group>"; };
 		76904F5B241504A30048C11B /* DMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMButton.swift; sourceTree = "<group>"; };
+		76904F5D241533E30048C11B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76904F60241534800048C11B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76904F72241553A90048C11B /* BarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		76A47412241158EA00FDAC4C /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76521DA5240C5D5D001D59F7 /* Pods_Document_Manager.framework in Frameworks */,
+				76904F65241534F30048C11B /* Pods_Document_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +169,7 @@
 				76904F572415040A0048C11B /* DMTitleLabel.swift */,
 				76904F59241504670048C11B /* DMBodyLabel.swift */,
 				76904F5B241504A30048C11B /* DMButton.swift */,
+				76904F72241553A90048C11B /* BarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +204,8 @@
 		DDF243A56B3710FAFFB30EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76904F60241534800048C11B /* Charts.framework */,
+				76904F5D241533E30048C11B /* Charts.framework */,
 				76A47412241158EA00FDAC4C /* Macaw.framework */,
 				76521DA8240D402C001D59F7 /* Macaw.framework */,
 				76521D9A240C5B45001D59F7 /* Macaw.framework */,
@@ -243,7 +250,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Tomasz Oskroba";
 				TargetAttributes = {
 					7626C3C4235CF80F00972E59 = {
@@ -327,6 +334,7 @@
 				76904F542415029F0048C11B /* DMErrors.swift in Sources */,
 				76904F5A241504670048C11B /* DMBodyLabel.swift in Sources */,
 				76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */,
+				76904F73241553A90048C11B /* BarCell.swift in Sources */,
 				7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */,
 				76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */,
 				7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */,

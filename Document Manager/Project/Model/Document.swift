@@ -1,17 +1,16 @@
 import Foundation
+import UIKit
 
 class Document {
     var name: String
-    var size: Int
     var type: String
     var dateAdded: String
-    var privacy: String
+    var image = UIImage(named: "")
     
-    init(name: String, size: Int, type: String, dateAdded: String, privacy: String) {
+    init(name: String, type: String, dateAdded: String, image: UIImage) {
         self.name = name
-        self.size = size
         self.type = type
         self.dateAdded = dateAdded
-        self.privacy = privacy
+        self.image = image
     }
 }

@@ -7,5 +7,6 @@ target 'Document Manager' do
 
   # Pods for Document Manager
   # pod 'Macaw', '0.9.5'
+  # pod 'Charts'
 
 end

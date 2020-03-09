@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import Charts
 
 protocol AddDoc {
     func addDoc(document: Document)
@@ -14,8 +15,8 @@ protocol AddDoc {
 
 class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var newDocument: Document = Document(name: "", size: 0, type: "", dateAdded: "", privacy: "")
-    let docTypesArray: [String] = ["Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
+    var newDocument: Document = Document(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!)
+    let docTypesArray: [String] = ["---", "Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
     var selectedType = ""
     private var datePicker: UIDatePicker?
     private let documentDescription = ""
@@ -58,16 +59,10 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         createTypePicker()
         createToolbar()
         createDatePicker()
-//        setImportLabel()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddDocTableViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
@@ -80,8 +75,6 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         typePicker.delegate = self
         
         typeTextField.inputView = typePicker
-//        typeTextField.text = String(typeTextField.inputView!)
-//        typeTextField.text = selectedType
         typePicker.backgroundColor = .systemFill
     }
     
@@ -137,8 +130,6 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         } else {
             presentDMLAlertOnMainThread(title: "Puste pola!", message: "Nie można udostępnić. Jedno z pól do uzupełnienia jest puste", buttonTitle: "Ok")
         }
-        
-        
     }
     
     @IBAction func takePictureTapped(_ sender: Any) {
@@ -151,47 +142,16 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         }
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-    
     // MARK: - Navigation
      
      @IBAction func AddDocument(_ sender: UIBarButtonItem) {
+        if (documentNameTextField.text != "") && (typeTextField.text != "Wybierz typ dokumentu") && (dateTextField.text != "Wybierz datę") {
+            newDocument = Document(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!)
             delegate?.addDoc(document: newDocument)
             navigationController?.popViewController(animated: true)
+        } else {
+            presentDMLAlertOnMainThread(title: "Puste pola!", message: "Nie można dodać dokumentu. Jedno z pól do uzupełnienia jest puste", buttonTitle: "Ok")
+        }
      }
     
     // MARK: Helper Methods
@@ -208,17 +168,10 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         
         return shareText
     }
-    
-     /*
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
 
 extension UIViewController {
     func presentDMLAlertOnMainThread(title: String, message: String, buttonTitle: String) {
@@ -238,17 +191,14 @@ extension AddDocTableViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
         return docTypesArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return docTypesArray[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
         selectedType = docTypesArray[row]
         typeTextField.text = selectedType
     }
