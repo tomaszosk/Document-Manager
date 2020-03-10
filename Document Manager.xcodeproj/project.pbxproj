@@ -29,6 +29,8 @@
 		76904F65241534F30048C11B /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */; };
 		76904F66241534F30048C11B /* Pods_Document_Manager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		76904F73241553A90048C11B /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F72241553A90048C11B /* BarCell.swift */; };
+		76B09D2F2418352400B1141A /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B09D2E2418352400B1141A /* DocumentCell.swift */; };
+		76B09D342418394A00B1141A /* DMFrontImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B09D332418394A00B1141A /* DMFrontImageView.swift */; };
 		76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */; };
 		76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */; };
 		76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC175E24117A5900761B5F /* AddDocTableViewController.swift */; };
@@ -75,13 +77,15 @@
 		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		76904F532415029F0048C11B /* DMErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMErrors.swift; sourceTree = "<group>"; };
 		76904F552415036A0048C11B /* DMAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAlertViewController.swift; sourceTree = "<group>"; };
-		76904F572415040A0048C11B /* DMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTitleLabel.swift; sourceTree = "<group>"; };
+		76904F572415040A0048C11B /* DMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DMTitleLabel.swift; path = ../DMTitleLabel.swift; sourceTree = "<group>"; };
 		76904F59241504670048C11B /* DMBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMBodyLabel.swift; sourceTree = "<group>"; };
 		76904F5B241504A30048C11B /* DMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMButton.swift; sourceTree = "<group>"; };
 		76904F5D241533E30048C11B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76904F60241534800048C11B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76904F72241553A90048C11B /* BarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		76A47412241158EA00FDAC4C /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76B09D2E2418352400B1141A /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
+		76B09D332418394A00B1141A /* DMFrontImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMFrontImageView.swift; sourceTree = "<group>"; };
 		76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		76EC175E24117A5900761B5F /* AddDocTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocTableViewController.swift; sourceTree = "<group>"; };
@@ -162,13 +166,12 @@
 		76521D70240C222A001D59F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				76B09D302418382700B1141A /* Custom views */,
+				76B09D2D241834F300B1141A /* Cells */,
 				7626C3C8235CF80F00972E59 /* AppDelegate.swift */,
 				7626C3CA235CF80F00972E59 /* SceneDelegate.swift */,
 				7626C3D0235CF80F00972E59 /* Main.storyboard */,
 				76521D77240C383D001D59F7 /* MacawChartView.swift */,
-				76904F572415040A0048C11B /* DMTitleLabel.swift */,
-				76904F59241504670048C11B /* DMBodyLabel.swift */,
-				76904F5B241504A30048C11B /* DMButton.swift */,
 				76904F72241553A90048C11B /* BarCell.swift */,
 			);
 			path = View;
@@ -180,6 +183,25 @@
 				8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		76B09D2D241834F300B1141A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				76B09D2E2418352400B1141A /* DocumentCell.swift */,
+				76B09D332418394A00B1141A /* DMFrontImageView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		76B09D302418382700B1141A /* Custom views */ = {
+			isa = PBXGroup;
+			children = (
+				76904F572415040A0048C11B /* DMTitleLabel.swift */,
+				76904F59241504670048C11B /* DMBodyLabel.swift */,
+				76904F5B241504A30048C11B /* DMButton.swift */,
+			);
+			path = "Custom views";
 			sourceTree = "<group>";
 		};
 		76DB8C0123A1ABA600B8DB34 /* Project */ = {
@@ -328,6 +350,7 @@
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */,
+				76B09D2F2418352400B1141A /* DocumentCell.swift in Sources */,
 				76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */,
 				76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */,
 				76904F582415040A0048C11B /* DMTitleLabel.swift in Sources */,
@@ -337,6 +360,7 @@
 				76904F73241553A90048C11B /* BarCell.swift in Sources */,
 				7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */,
 				76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */,
+				76B09D342418394A00B1141A /* DMFrontImageView.swift in Sources */,
 				7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */,
 				76904F5C241504A30048C11B /* DMButton.swift in Sources */,
 			);
