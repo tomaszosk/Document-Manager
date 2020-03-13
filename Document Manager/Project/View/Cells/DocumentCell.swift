@@ -23,8 +23,9 @@ class DocumentCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func ser(document: Document) {
+    func set(document: DocumentStruct) {
         documentLabel.text = document.name
+        frontImageView.image = UIImage(data: document.image)
     }
     
     private func configure() {

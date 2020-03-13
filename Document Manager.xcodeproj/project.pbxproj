@@ -31,6 +31,8 @@
 		76904F73241553A90048C11B /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F72241553A90048C11B /* BarCell.swift */; };
 		76B09D2F2418352400B1141A /* DocumentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B09D2E2418352400B1141A /* DocumentCell.swift */; };
 		76B09D342418394A00B1141A /* DMFrontImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B09D332418394A00B1141A /* DMFrontImageView.swift */; };
+		76B09D362418488700B1141A /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B09D352418488700B1141A /* Image.swift */; };
+		76B09D3824184A2400B1141A /* DocumentStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B09D3724184A2400B1141A /* DocumentStruct.swift */; };
 		76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */; };
 		76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */; };
 		76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC175E24117A5900761B5F /* AddDocTableViewController.swift */; };
@@ -86,6 +88,8 @@
 		76A47412241158EA00FDAC4C /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B09D2E2418352400B1141A /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
 		76B09D332418394A00B1141A /* DMFrontImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMFrontImageView.swift; sourceTree = "<group>"; };
+		76B09D352418488700B1141A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		76B09D3724184A2400B1141A /* DocumentStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentStruct.swift; sourceTree = "<group>"; };
 		76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		76EC175E24117A5900761B5F /* AddDocTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocTableViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				76521D73240C34F9001D59F7 /* DocumentsCount.swift */,
 				76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */,
 				76904F532415029F0048C11B /* DMErrors.swift */,
+				76B09D352418488700B1141A /* Image.swift */,
+				76B09D3724184A2400B1141A /* DocumentStruct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,8 +354,10 @@
 				76904F562415036A0048C11B /* DMAlertViewController.swift in Sources */,
 				76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */,
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
+				76B09D3824184A2400B1141A /* DocumentStruct.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */,
+				76B09D362418488700B1141A /* Image.swift in Sources */,
 				76B09D2F2418352400B1141A /* DocumentCell.swift in Sources */,
 				76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */,
 				76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */,

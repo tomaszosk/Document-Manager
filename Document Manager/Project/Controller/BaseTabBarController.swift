@@ -11,12 +11,12 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
     
-    var doc1: Document = Document(name: "1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc2: Document = Document(name: "2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc3: Document = Document(name: "3", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc4: Document = Document(name: "4", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
+    var doc1: DocumentStruct = DocumentStruct(name: "Dokument 1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
+    var doc2: DocumentStruct = DocumentStruct(name: "Dokument 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
+    var doc3: DocumentStruct = DocumentStruct(name: "Dokument 3", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
+    var doc4: DocumentStruct = DocumentStruct(name: "Dokument 4", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
     
-    var fullDocumentList: [Document] = []
+    var fullDocumentList: [DocumentStruct] = []
     
 
     override func viewDidLoad() {
@@ -25,6 +25,7 @@ class BaseTabBarController: UITabBarController {
         fullDocumentList.append(doc2)
         fullDocumentList.append(doc3)
         fullDocumentList.append(doc4)
+//        print(fullDocumentList)
         // Do any additional setup after loading the view.
     }
 

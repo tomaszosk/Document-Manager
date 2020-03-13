@@ -11,7 +11,7 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
-    var docList: [Document] = []
+    var docList: [DocumentStruct] = []
     
     @IBOutlet weak var docTableView: UITableView!
     
@@ -57,7 +57,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         vc.delegate = self
     }
     
-    func addDoc(document: Document) {
+    func addDoc(document: DocumentStruct) {
         docList.append(document)
         docTableView.reloadData()
     }

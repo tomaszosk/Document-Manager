@@ -10,12 +10,12 @@ import UIKit
 //import Charts
 
 protocol AddDoc {
-    func addDoc(document: Document)
+    func addDoc(document: DocumentStruct)
 }
 
 class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var newDocument: Document = Document(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!)
+    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!)
     let docTypesArray: [String] = ["---", "Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
     var selectedType = ""
     private var datePicker: UIDatePicker?
@@ -146,7 +146,7 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
      
      @IBAction func AddDocument(_ sender: UIBarButtonItem) {
         if (documentNameTextField.text != "") && (typeTextField.text != "Wybierz typ dokumentu") && (dateTextField.text != "Wybierz datę") {
-            newDocument = Document(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!)
+            newDocument = DocumentStruct(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!)
             delegate?.addDoc(document: newDocument)
             navigationController?.popViewController(animated: true)
         } else {
