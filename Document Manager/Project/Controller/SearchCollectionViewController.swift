@@ -22,30 +22,22 @@ class SearchCollectionViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, DocumentStruct>!
     
-    
-//    @IBOutlet weak var docsNumber: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(searchDocList)
-//        updateData()
-//        print(searchDocList)
+        configureViewController()
+        configureSearchViewController()
         configureCollectionView()
         configureDataSource()
         
+        
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
-//        docsNumber.text = String(searchDocList.count)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
         updateData()
-//        print(tabBar.fullDocumentList)
-//        print(searchDocList)
-//        docsNumber.text = String(searchDocList.count)
     }
 
     func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -62,12 +54,26 @@ class SearchCollectionViewController: UIViewController {
         return flowLayout
     }
     
+    func configureViewController() {
+//        view.backgroundColor = .systemBackground
+//        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
         view.addSubview(collectionView)
         
-        collectionView.backgroundColor = .systemPink
+        collectionView.delegate = self as? UICollectionViewDelegate
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(DocumentCell.self, forCellWithReuseIdentifier: DocumentCell.reuseID)
+    }
+    
+    func configureSearchViewController() {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Szukaj dokumentu"
+        navigationItem.searchController = searchController
+        print("configure SearchVC")
     }
     
     func configureDataSource() {
@@ -98,28 +104,28 @@ class SearchCollectionViewController: UIViewController {
         }
     }
     
-    func configureSearchController() {
-        let searchController = UISearchController()
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.placeholder = "Search for a username"
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
-    }
+//    func configureSearchController() {
+//        let searchController = UISearchController()
+//        searchController.searchResultsUpdater = self
+//        searchController.searchBar.delegate = self
+//        searchController.searchBar.placeholder = "Search for a username"
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        navigationItem.searchController = searchController
+//    }
 }
 
 extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
-        isSearching = true
-        
-        filteredDocuments = searchDocList.filter { $0.name.lowercased().contains(filter.lowercased()) }
-        updateData(on: filteredDocuments)
+//        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+//        isSearching = true
+//        
+//        filteredDocuments = searchDocList.filter { $0.name.lowercased().contains(filter.lowercased()) }
+//        updateData(on: filteredDocuments)
     }
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = false
-        updateData(on: searchDocList)
-    }
+//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+//        isSearching = false
+//        updateData(on: searchDocList)
+//    }
 }
