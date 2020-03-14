@@ -62,9 +62,11 @@ class SearchCollectionViewController: UIViewController {
     func configureSearchViewController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
+        searchController.searchBar.scopeButtonTitles = DocumentStruct.Category.allCases.map { $0.rawValue }
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Szukaj dokumentu"
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 60)
         
         navigationItem.searchController = searchController
         
@@ -97,6 +99,26 @@ class SearchCollectionViewController: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String,
+                                    category: DocumentStruct.Category? = nil) {
+      filteredDocuments = searchDocList.filter { (document: DocumentStruct) -> Bool in
+        let doesCategoryMatch = category == .all || document.category == category
+        
+        if isSearchBarEmpty {
+          return doesCategoryMatch
+        } else {
+          return doesCategoryMatch && document.name.lowercased().contains(searchText.lowercased())
+        }
+      }
+      
+      updateData(on: searchDocList)
+    }
 }
 
 extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDelegate {
@@ -104,6 +126,12 @@ extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDe
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         isSearching = true
+        
+        let searchBar = searchController.searchBar
+        let category = DocumentStruct.Category(rawValue:
+          searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+        filterContentForSearchText(searchBar.text!, category: category)
+        
         filteredDocuments = searchDocList.filter { $0.name.lowercased().contains(filter.lowercased()) }
         updateData(on: filteredDocuments)
     }
@@ -112,4 +140,13 @@ extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDe
         isSearching = false
         updateData(on: searchDocList)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        let category = DocumentStruct.Category(rawValue:
+        searchBar.scopeButtonTitles![selectedScope])
+        filterContentForSearchText(searchBar.text!, category: category)
+        updateData(on: filteredDocuments)
+    }
+    
+    
 }

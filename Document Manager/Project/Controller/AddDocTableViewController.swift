@@ -15,9 +15,10 @@ protocol AddDoc {
 
 class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!)
-    let docTypesArray: [String] = ["---", "Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
+    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!, category: .all)
+    let docTypesArray: [String] = ["Wszystkie", "Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
     var selectedType = ""
+    var rowOfSelectedType = 0
     private var datePicker: UIDatePicker?
     private let documentDescription = ""
     
@@ -146,7 +147,8 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
      
      @IBAction func AddDocument(_ sender: UIBarButtonItem) {
         if (documentNameTextField.text != "") && (typeTextField.text != "Wybierz typ dokumentu") && (dateTextField.text != "Wybierz datę") {
-            newDocument = DocumentStruct(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!)
+            newDocument = DocumentStruct(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!, category: .all)
+            setTheType(row: rowOfSelectedType)
             delegate?.addDoc(document: newDocument)
             navigationController?.popViewController(animated: true)
         } else {
@@ -167,6 +169,19 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         let shareText = "Dokument o nazwie: \(documentName) i rodzaju: \(documentType) został utworzony w aplikacji dnia: \(dateCreated)"
         
         return shareText
+    }
+    
+    func setTheType(row: Int) {
+        switch row {
+            case 0: newDocument.category = .all
+            case 1: newDocument.category = .facture
+            case 2: newDocument.category = .reciept
+            case 3: newDocument.category = .installation
+            case 4: newDocument.category = .service
+            case 5: newDocument.category = .report
+            case 6: newDocument.category = .dailyreport
+            default: return
+        }
     }
 }
 
@@ -199,6 +214,7 @@ extension AddDocTableViewController: UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        rowOfSelectedType = row
         selectedType = docTypesArray[row]
         typeTextField.text = selectedType
     }

@@ -11,19 +11,19 @@ import UIKit
 
 class BaseTabBarController: UITabBarController {
     
-    var doc1: DocumentStruct = DocumentStruct(name: "Dokument 1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc2: DocumentStruct = DocumentStruct(name: "Dokument 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc3: DocumentStruct = DocumentStruct(name: "Dokument 3", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc4: DocumentStruct = DocumentStruct(name: "Dokument 4", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc5: DocumentStruct = DocumentStruct(name: "Dokument 5", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc6: DocumentStruct = DocumentStruct(name: "Dokument 6", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc7: DocumentStruct = DocumentStruct(name: "Dokument 7", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc8: DocumentStruct = DocumentStruct(name: "Dokument 8", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc9: DocumentStruct = DocumentStruct(name: "Dokument 9", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc10: DocumentStruct = DocumentStruct(name: "Dokument 10", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc11: DocumentStruct = DocumentStruct(name: "Dokument 11", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc12: DocumentStruct = DocumentStruct(name: "Dokument 12", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
-    var doc13: DocumentStruct = DocumentStruct(name: "Dokument 13", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!)
+    var doc1: DocumentStruct = DocumentStruct(name: "Dokument 1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .reciept)
+    var doc2: DocumentStruct = DocumentStruct(name: "Dokument 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
+    var doc3: DocumentStruct = DocumentStruct(name: "Faktura 1", type: "Faktura", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .facture)
+    var doc4: DocumentStruct = DocumentStruct(name: "Faktura 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .facture)
+    var doc5: DocumentStruct = DocumentStruct(name: "Paragon", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .reciept)
+    var doc6: DocumentStruct = DocumentStruct(name: "Protokol z instalacji", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .installation)
+    var doc7: DocumentStruct = DocumentStruct(name: "Protokół serwisowy", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .service)
+    var doc8: DocumentStruct = DocumentStruct(name: "Sprawodzanie", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .dailyreport)
+    var doc9: DocumentStruct = DocumentStruct(name: "Raport końcowy 1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
+    var doc10: DocumentStruct = DocumentStruct(name: "Raport końcowy 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
+    var doc11: DocumentStruct = DocumentStruct(name: "Protokol z instalacji 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .installation)
+    var doc12: DocumentStruct = DocumentStruct(name: "Protokół serwisowy 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .service)
+    var doc13: DocumentStruct = DocumentStruct(name: "Raport końcowy 3", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
     
     
     var fullDocumentList: [DocumentStruct] = []
