@@ -10,9 +10,7 @@ import UIKit
 
 class SearchCollectionViewController: UIViewController {
     
-    enum Section {
-        case main
-    }
+    enum Section { case main }
     
     var searchDocList = [DocumentStruct]()
     var filteredDocuments: [DocumentStruct] = []
@@ -24,11 +22,9 @@ class SearchCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureViewController()
         configureSearchViewController()
         configureCollectionView()
         configureDataSource()
-        
         
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
@@ -37,7 +33,7 @@ class SearchCollectionViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
-        updateData()
+        updateData(on: searchDocList)
     }
 
     func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -54,11 +50,6 @@ class SearchCollectionViewController: UIViewController {
         return flowLayout
     }
     
-    func configureViewController() {
-//        view.backgroundColor = .systemBackground
-//        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
     func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
         view.addSubview(collectionView)
@@ -71,9 +62,12 @@ class SearchCollectionViewController: UIViewController {
     func configureSearchViewController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Szukaj dokumentu"
+        searchController.obscuresBackgroundDuringPresentation = false
+        
         navigationItem.searchController = searchController
-        print("configure SearchVC")
+        
     }
     
     func configureDataSource() {
@@ -103,29 +97,19 @@ class SearchCollectionViewController: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
-    
-//    func configureSearchController() {
-//        let searchController = UISearchController()
-//        searchController.searchResultsUpdater = self
-//        searchController.searchBar.delegate = self
-//        searchController.searchBar.placeholder = "Search for a username"
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        navigationItem.searchController = searchController
-//    }
 }
 
 extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-//        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
-//        isSearching = true
-//        
-//        filteredDocuments = searchDocList.filter { $0.name.lowercased().contains(filter.lowercased()) }
-//        updateData(on: filteredDocuments)
+        guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
+        isSearching = true
+        filteredDocuments = searchDocList.filter { $0.name.lowercased().contains(filter.lowercased()) }
+        updateData(on: filteredDocuments)
     }
     
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        isSearching = false
-//        updateData(on: searchDocList)
-//    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        updateData(on: searchDocList)
+    }
 }
