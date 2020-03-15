@@ -12,7 +12,7 @@ class DocumentCell: UICollectionViewCell {
     static let reuseID = "DocumentCell"
     
     let frontImageView = DMFrontImageView(frame: .zero)
-    let documentLabel = DMTitleLabel(textAlignment: .center, fontSize: 16)
+    let documentLabel = DMTitleLabel(textAlignment: .center, fontSize: 12)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

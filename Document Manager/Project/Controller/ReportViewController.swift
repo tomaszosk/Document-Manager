@@ -12,20 +12,20 @@ class ReportViewController: UICollectionViewController, UICollectionViewDelegate
     
     let cellId = "cellId"
     
-    let values: [CGFloat] = [200, 300, 400, 500, 600, 700]
+    let values: [CGFloat] = [5, 6, 4, 1, 3]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .systemBackground
         
         collectionView?.register(BarCell.self, forCellWithReuseIdentifier: cellId)
         
-        (collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
+//        (collectionView?.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .horizontal
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return 10
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -33,7 +33,8 @@ class ReportViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func maxHeight() -> CGFloat {
-        return view.frame.height - 20 - 44 - 8
+//        return view.frame.height - 20 - 44 - 8
+        return view.frame.height - 400
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -44,6 +45,7 @@ class ReportViewController: UICollectionViewController, UICollectionViewDelegate
             let ratio = value / max
             
             cell.barHeightConstraint?.constant = maxHeight() * ratio
+//            cell.layer.cornerRadius = 20
         }
         
         return cell
@@ -51,11 +53,11 @@ class ReportViewController: UICollectionViewController, UICollectionViewDelegate
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: maxHeight())
+        return CGSize(width: (view.frame.width - 100 ) / 5, height: maxHeight())
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 4)
+        return UIEdgeInsets(top: 200, left: 20, bottom: 0, right: 20)
     }
 
 }
