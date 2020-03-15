@@ -16,13 +16,13 @@ class BaseTabBarController: UITabBarController {
     var doc3: DocumentStruct = DocumentStruct(name: "Faktura 1", type: "Faktura", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .facture)
     var doc4: DocumentStruct = DocumentStruct(name: "Faktura 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .facture)
     var doc5: DocumentStruct = DocumentStruct(name: "Paragon", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .reciept)
-    var doc6: DocumentStruct = DocumentStruct(name: "Protokol z instalacji", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .installation)
-    var doc7: DocumentStruct = DocumentStruct(name: "Protokół serwisowy", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .service)
-    var doc8: DocumentStruct = DocumentStruct(name: "Sprawodzanie", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .dailyreport)
+    var doc6: DocumentStruct = DocumentStruct(name: "Protokol z instalacji", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .summary)
+    var doc7: DocumentStruct = DocumentStruct(name: "Protokół serwisowy", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .summary)
+    var doc8: DocumentStruct = DocumentStruct(name: "Sprawodzanie", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .summary)
     var doc9: DocumentStruct = DocumentStruct(name: "Raport końcowy 1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
     var doc10: DocumentStruct = DocumentStruct(name: "Raport końcowy 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
-    var doc11: DocumentStruct = DocumentStruct(name: "Protokol z instalacji 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .installation)
-    var doc12: DocumentStruct = DocumentStruct(name: "Protokół serwisowy 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .service)
+    var doc11: DocumentStruct = DocumentStruct(name: "Protokol z instalacji 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .summary)
+    var doc12: DocumentStruct = DocumentStruct(name: "Protokół serwisowy 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .summary)
     var doc13: DocumentStruct = DocumentStruct(name: "Raport końcowy 3", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
     
     

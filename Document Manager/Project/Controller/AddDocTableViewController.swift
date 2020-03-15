@@ -176,10 +176,10 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
             case 0: newDocument.category = .all
             case 1: newDocument.category = .facture
             case 2: newDocument.category = .reciept
-            case 3: newDocument.category = .installation
-            case 4: newDocument.category = .service
+            case 3: newDocument.category = .summary
+//            case 4: newDocument.category = .service
             case 5: newDocument.category = .report
-            case 6: newDocument.category = .dailyreport
+//            case 6: newDocument.category = .dailyreport
             default: return
         }
     }
