@@ -1,65 +1,32 @@
 //
-//  BarCell.swift
+//  ReportBarCell.swift
 //  Document Manager
 //
-//  Created by Tomasz Oskroba on 3/8/20.
+//  Created by Tomasz Oskroba on 3/15/20.
 //  Copyright © 2020 Tomasz Oskroba. All rights reserved.
 //
 
 import UIKit
 
-class BarCell: UICollectionViewCell {
+class ReportBarCell: UICollectionViewCell {
+    static let reuseID = "ReportBarCell"
     
     let barNameLabel = DMTitleLabel(textAlignment: .center, fontSize: 12)
     let barCountLabel = DMTitleLabel(textAlignment: .center, fontSize: 16)
-    
-    let barView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Colors.brightOrange
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    var barHeightConstraint: NSLayoutConstraint?
-//    barHeightConstraint = barView.bottomAnchor.constraint(equalToConstant: 300)
-    
-    override var isHighlighted: Bool {
-        didSet {
-            barView.backgroundColor = isHighlighted ? Colors.orange : Colors.brightOrange
-        }
-    }
+    let barView = BarView(backgroundColor: Colors.orange)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        addSubview(barView)
-        
-
-//        barView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//        configure()
-        
-        barView.layer.cornerRadius = 10
-        barView.layer.masksToBounds = true
-        barView.setGradientBackground(colorOne: Colors.orange, colorTwo: Colors.brightOrange)
-
-        barHeightConstraint = barView.heightAnchor.constraint(equalToConstant: 300)
-
-        barHeightConstraint?.isActive = true
-        barHeightConstraint?.constant = 100
-
-        barView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        barView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        barView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        
+        configure()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func set(document: DocumentStruct) {
         barCountLabel.text = "0"
-        barNameLabel.text = "Faktura"
+        barNameLabel.text = "Name"
     }
     
     private func configure() {
@@ -91,5 +58,4 @@ class BarCell: UICollectionViewCell {
             
         ])
     }
-    
 }
