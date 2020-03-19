@@ -147,6 +147,4 @@ extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDe
         filterContentForSearchText(searchBar.text!, category: category)
         updateData(on: filteredDocuments)
     }
-    
-    
 }

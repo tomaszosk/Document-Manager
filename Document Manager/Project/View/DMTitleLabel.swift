@@ -30,7 +30,8 @@ class DMTitleLabel: UILabel {
         textColor = .label
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.9
-        lineBreakMode = .byTruncatingTail
+//        lineBreakMode = .byTruncatingMiddle
+//        numberOfLines = 2
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

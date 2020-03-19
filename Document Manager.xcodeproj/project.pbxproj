@@ -36,6 +36,11 @@
 		76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */; };
 		76E08FD424105BCE00BAEEF3 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */; };
 		76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC175E24117A5900761B5F /* AddDocTableViewController.swift */; };
+		76F90B1E241E6F92001CCC46 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B1D241E6F92001CCC46 /* Colors.swift */; };
+		76F90B21241E712E001CCC46 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B20241E712E001CCC46 /* UIViewExtension.swift */; };
+		76F90B23241E9360001CCC46 /* BarReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B22241E9360001CCC46 /* BarReportViewController.swift */; };
+		76F90B25241E9467001CCC46 /* ReportBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B24241E9467001CCC46 /* ReportBarCell.swift */; };
+		76F90B27241E94EA001CCC46 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B26241E94EA001CCC46 /* BarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +98,11 @@
 		76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		76EC175E24117A5900761B5F /* AddDocTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocTableViewController.swift; sourceTree = "<group>"; };
+		76F90B1D241E6F92001CCC46 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		76F90B20241E712E001CCC46 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		76F90B22241E9360001CCC46 /* BarReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarReportViewController.swift; sourceTree = "<group>"; };
+		76F90B24241E9467001CCC46 /* ReportBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBarCell.swift; sourceTree = "<group>"; };
+		76F90B26241E94EA001CCC46 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		8B38AB6F2CD926B15302F353 /* Pods_Document_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Document_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		947F5B31FFAB5B8AC6E87B28 /* Pods-Document Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Document Manager.debug.xcconfig"; path = "Target Support Files/Pods-Document Manager/Pods-Document Manager.debug.xcconfig"; sourceTree = "<group>"; };
 		B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Document_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +175,7 @@
 				76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */,
 				76EC175E24117A5900761B5F /* AddDocTableViewController.swift */,
 				76904F552415036A0048C11B /* DMAlertViewController.swift */,
+				76F90B22241E9360001CCC46 /* BarReportViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,7 +189,6 @@
 				7626C3CA235CF80F00972E59 /* SceneDelegate.swift */,
 				7626C3D0235CF80F00972E59 /* Main.storyboard */,
 				76521D77240C383D001D59F7 /* MacawChartView.swift */,
-				76904F72241553A90048C11B /* BarCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,8 +204,11 @@
 		76B09D2D241834F300B1141A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				76904F72241553A90048C11B /* BarCell.swift */,
 				76B09D2E2418352400B1141A /* DocumentCell.swift */,
 				76B09D332418394A00B1141A /* DMFrontImageView.swift */,
+				76F90B24241E9467001CCC46 /* ReportBarCell.swift */,
+				76F90B26241E94EA001CCC46 /* BarView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -206,6 +219,7 @@
 				76904F572415040A0048C11B /* DMTitleLabel.swift */,
 				76904F59241504670048C11B /* DMBodyLabel.swift */,
 				76904F5B241504A30048C11B /* DMButton.swift */,
+				76F90B1D241E6F92001CCC46 /* Colors.swift */,
 			);
 			path = "Custom views";
 			sourceTree = "<group>";
@@ -213,11 +227,20 @@
 		76DB8C0123A1ABA600B8DB34 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				76F90B1F241E710D001CCC46 /* Extensions */,
 				76521D6D240C21E3001D59F7 /* Model */,
 				76521D6F240C2207001D59F7 /* Controller */,
 				76521D70240C222A001D59F7 /* View */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		76F90B1F241E710D001CCC46 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76F90B20241E712E001CCC46 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C720BBF2E9CAE5ED94E4353A /* Pods */ = {
@@ -352,17 +375,22 @@
 				7626C3CF235CF80F00972E59 /* SecondViewController.swift in Sources */,
 				76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */,
 				76904F562415036A0048C11B /* DMAlertViewController.swift in Sources */,
+				76F90B25241E9467001CCC46 /* ReportBarCell.swift in Sources */,
 				76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */,
 				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
 				76B09D3824184A2400B1141A /* DocumentStruct.swift in Sources */,
+				76F90B21241E712E001CCC46 /* UIViewExtension.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				76521D76240C364E001D59F7 /* ReportViewController.swift in Sources */,
 				76B09D362418488700B1141A /* Image.swift in Sources */,
 				76B09D2F2418352400B1141A /* DocumentCell.swift in Sources */,
 				76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */,
 				76EC175F24117A5900761B5F /* AddDocTableViewController.swift in Sources */,
+				76F90B23241E9360001CCC46 /* BarReportViewController.swift in Sources */,
 				76904F582415040A0048C11B /* DMTitleLabel.swift in Sources */,
+				76F90B1E241E6F92001CCC46 /* Colors.swift in Sources */,
 				76904F542415029F0048C11B /* DMErrors.swift in Sources */,
+				76F90B27241E94EA001CCC46 /* BarView.swift in Sources */,
 				76904F5A241504670048C11B /* DMBodyLabel.swift in Sources */,
 				76E08FD22410572C00BAEEF3 /* BaseTabBarController.swift in Sources */,
 				76904F73241553A90048C11B /* BarCell.swift in Sources */,
