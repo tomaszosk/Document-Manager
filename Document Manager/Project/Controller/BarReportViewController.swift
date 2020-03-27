@@ -14,6 +14,8 @@ class BarReportViewController: UIViewController {
     let reportTitleLabel = DMTitleLabel(textAlignment: .center, fontSize: 36)
     let countHeaderLabel = DMTitleLabel(textAlignment: .center, fontSize: 24)
     let countHeaderNumber = DMTitleLabel(textAlignment: .center, fontSize: 42)
+    let firstDocTypeLabel = DMTitleLabel(textAlignment: .left, fontSize: 18)
+    let firstDocTypeNumber = DMTitleLabel(textAlignment: .right, fontSize: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,5 +61,7 @@ class BarReportViewController: UIViewController {
         reportTitleLabel.text = "Raport"
         countHeaderLabel.text = "Liczba wszystkich dokumentów:"
         countHeaderNumber.text = "7"
+        firstDocTypeLabel.text = DocumentStruct.Category.facture.rawValue
+        
     }
 }

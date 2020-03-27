@@ -346,17 +346,17 @@
             </objects>
             <point key="canvasLocation" x="749" y="362"/>
         </scene>
-        <!--Item-->
+        <!--Raporty-->
         <scene sceneID="Ugu-Va-umb">
             <objects>
-                <viewController id="je5-9l-syj" customClass="BarReportViewController" customModule="Document_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Raporty" id="je5-9l-syj" customClass="BarReportViewController" customModule="Document_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rav-uq-PSq" customClass="BarReport">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tog-Wd-AVY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="USR-zI-bJe"/>
+                    <tabBarItem key="tabBarItem" title="Raporty" image="chart.bar.fill" catalog="system" landscapeImage="chart.bar.fill" selectedImage="chart.bar.fill" id="USR-zI-bJe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="av8-2t-N6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -411,7 +411,6 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="cib-cQ-cHT" kind="relationship" relationship="viewControllers" id="EFa-uy-3f4"/>
                         <segue destination="je5-9l-syj" kind="relationship" relationship="viewControllers" id="ezE-aa-3n0"/>
-                        <segue destination="2sB-DU-lkG" kind="relationship" relationship="viewControllers" id="jCJ-E5-D49"/>
                         <segue destination="4T6-f1-24r" kind="relationship" relationship="viewControllers" id="bHC-hj-qbO"/>
                     </connections>
                 </tabBarController>
