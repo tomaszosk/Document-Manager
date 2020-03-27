@@ -21,9 +21,7 @@ struct DocumentStruct: Codable, Hashable {
         case facture
         case reciept
         case summary
-//        case service
         case report
-//        case dailyreport
     }
     
     public init(name: String, type: String, dateAdded: String, image: UIImage, category: Category) {
@@ -46,9 +44,7 @@ extension DocumentStruct.Category: RawRepresentable {
         case "Faktura": self = .facture
         case "Paragon": self = .reciept
         case "Protokół": self = .summary
-//        case "Serwis": self = .service
         case "Raport": self = .report
-//        case "Sprawozdanie": self = .dailyreport
         default: return nil
     }
   }
@@ -59,9 +55,7 @@ extension DocumentStruct.Category: RawRepresentable {
         case .facture: return "Faktura"
         case .reciept: return "Paragon"
         case .summary: return "Protokół"
-//        case .service: return "Serwis"
         case .report: return "Raport"
-//        case .dailyreport: return "Sprawozdanie"
     }
   }
 }
