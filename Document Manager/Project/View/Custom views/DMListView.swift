@@ -36,31 +36,34 @@ class DMListView: UIView {
         addSubview(thirdCell)
         addSubview(fourthCell)
         
+        let padding: CGFloat = 20
+        let cellHeight: CGFloat = 60
+        
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 40),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
             descriptionLabel.heightAnchor.constraint(equalToConstant: 40),
             
-            firstCell.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 0),
-            firstCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            firstCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            firstCell.heightAnchor.constraint(equalToConstant: 75),
+            firstCell.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            firstCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            firstCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            firstCell.heightAnchor.constraint(equalToConstant: cellHeight),
             
             secondCell.topAnchor.constraint(equalTo: firstCell.bottomAnchor, constant: 20),
-            secondCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            secondCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            secondCell.heightAnchor.constraint(equalToConstant: 75),
+            secondCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            secondCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            secondCell.heightAnchor.constraint(equalToConstant: cellHeight),
             
             thirdCell.topAnchor.constraint(equalTo: secondCell.bottomAnchor, constant: 20),
-            thirdCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            thirdCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            thirdCell.heightAnchor.constraint(equalToConstant: 75),
+            thirdCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            thirdCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            thirdCell.heightAnchor.constraint(equalToConstant: cellHeight),
             
             fourthCell.topAnchor.constraint(equalTo: thirdCell.bottomAnchor, constant: 20),
-            fourthCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            fourthCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            fourthCell.heightAnchor.constraint(equalToConstant: 75)
+            fourthCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: padding),
+            fourthCell.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding),
+            fourthCell.heightAnchor.constraint(equalToConstant: cellHeight)
         ])
     }
     

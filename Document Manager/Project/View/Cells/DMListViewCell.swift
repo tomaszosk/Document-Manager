@@ -28,7 +28,8 @@ class DMListViewCell: UIView {
     }
     
     private func setupView() {
-        backgroundColor = Colors.green
+        backgroundColor = Colors.orange
+        layer.cornerRadius = 10
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(docLabel)
@@ -44,11 +45,11 @@ class DMListViewCell: UIView {
         NSLayoutConstraint.activate([
             docLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             docLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            docLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -210),
+            docLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -110),
             docLabel.heightAnchor.constraint(equalToConstant: 50),
             
             docNumber.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            docNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 210),
+            docNumber.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 300),
             docNumber.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             docNumber.heightAnchor.constraint(equalToConstant: 50)
         ])

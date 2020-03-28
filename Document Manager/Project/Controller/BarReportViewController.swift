@@ -26,23 +26,15 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureTabBar()
-        for documentCategorized in docList {
-            if documentCategorized.category == .facture {
-                factureList.append(documentCategorized)
-            } else if documentCategorized.category == .reciept {
-                recieptList.append(documentCategorized)
-            } else if documentCategorized.category == .report {
-                reportList.append(documentCategorized)
-            } else if documentCategorized.category == .summary {
-                summaryList.append(documentCategorized)
-            }
-        }
-        
-
         configureTheView()
 
+        setLabels()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        configureTabBar()
+        
         setLabels()
     }
 
@@ -91,7 +83,7 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
     }
     
     private func setLabels() {
-        reportTitleLabel.text = "Raport"
+        reportTitleLabel.text = "Podsumowanie"
         countHeaderLabel.text = "Liczba wszystkich dokumentów:"
         countHeaderNumber.text = String(docList.count)
         allDocumentsTypesView.firstCell.docLabel.text = "Faktury:"
@@ -107,7 +99,30 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
     }
     
     private func configureTabBar() {
+        resetCountNumbers()
         let tabBar = tabBarController as! BaseTabBarController
         docList = tabBar.fullDocumentList
+        updateCountNumbers()
+    }
+    
+    private func updateCountNumbers() {
+        for documentCategorized in docList {
+            if documentCategorized.category == .facture {
+                factureList.append(documentCategorized)
+            } else if documentCategorized.category == .reciept {
+                recieptList.append(documentCategorized)
+            } else if documentCategorized.category == .report {
+                reportList.append(documentCategorized)
+            } else if documentCategorized.category == .summary {
+                summaryList.append(documentCategorized)
+            }
+        }
+    }
+    
+    private func resetCountNumbers() {
+        factureList = []
+        recieptList = []
+        reportList = []
+        summaryList = []
     }
 }
