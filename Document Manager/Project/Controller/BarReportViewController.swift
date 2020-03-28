@@ -8,7 +8,9 @@
 
 import UIKit
 
-class BarReportViewController: UIViewController {
+class BarReportViewController: UIViewController, UINavigationControllerDelegate {
+    
+    var docList: [DocumentStruct] = []
     
     let topMargin = UIView()
     let reportTitleLabel = DMTitleLabel(textAlignment: .center, fontSize: 36)
@@ -19,11 +21,13 @@ class BarReportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+        configureTheView()
+        configureTabBar()
+        
         setLabels()
     }
 
-    func configure() {
+    func configureTheView() {
         view.addSubview(topMargin)
         topMargin.addSubview(reportTitleLabel)
         
@@ -60,8 +64,13 @@ class BarReportViewController: UIViewController {
     func setLabels() {
         reportTitleLabel.text = "Raport"
         countHeaderLabel.text = "Liczba wszystkich dokumentów:"
-        countHeaderNumber.text = "7"
+        countHeaderNumber.text = String(docList.count)
         firstDocTypeLabel.text = DocumentStruct.Category.facture.rawValue
         
+    }
+    
+    func configureTabBar() {
+        let tabBar = tabBarController as! BaseTabBarController
+        docList = tabBar.fullDocumentList
     }
 }
