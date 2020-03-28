@@ -29,6 +29,7 @@ class BaseTabBarController: UITabBarController {
     var fullDocumentList: [DocumentStruct] = []
     
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         fullDocumentList.append(doc1)
@@ -45,6 +46,7 @@ class BaseTabBarController: UITabBarController {
         fullDocumentList.append(doc12)
         fullDocumentList.append(doc13)
         
+
 //        print(fullDocumentList)
         // Do any additional setup after loading the view.
     }

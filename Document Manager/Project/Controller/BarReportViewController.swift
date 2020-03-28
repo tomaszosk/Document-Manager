@@ -16,27 +16,51 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
     let reportTitleLabel = DMTitleLabel(textAlignment: .center, fontSize: 36)
     let countHeaderLabel = DMTitleLabel(textAlignment: .center, fontSize: 24)
     let countHeaderNumber = DMTitleLabel(textAlignment: .center, fontSize: 42)
-    let firstDocTypeLabel = DMTitleLabel(textAlignment: .left, fontSize: 18)
-    let firstDocTypeNumber = DMTitleLabel(textAlignment: .right, fontSize: 20)
+    
+    let allDocumentsTypesView = DMListView()
+    
+    var factureList: [DocumentStruct] = []
+    var recieptList: [DocumentStruct] = []
+    var reportList: [DocumentStruct] = []
+    var summaryList: [DocumentStruct] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTheView()
-        configureTabBar()
         
+        configureTabBar()
+        for documentCategorized in docList {
+            if documentCategorized.category == .facture {
+                factureList.append(documentCategorized)
+            } else if documentCategorized.category == .reciept {
+                recieptList.append(documentCategorized)
+            } else if documentCategorized.category == .report {
+                reportList.append(documentCategorized)
+            } else if documentCategorized.category == .summary {
+                summaryList.append(documentCategorized)
+            }
+        }
+        
+
+        configureTheView()
+
         setLabels()
     }
 
-    func configureTheView() {
+    private func configureTheView() {
         view.addSubview(topMargin)
         topMargin.addSubview(reportTitleLabel)
         
-        view.addSubview(countHeaderLabel)
-        view.addSubview(countHeaderNumber)
-
         topMargin.backgroundColor = Colors.brightOrange
         topMargin.translatesAutoresizingMaskIntoConstraints = false
         reportTitleLabel.textColor = .white
+        
+        view.addSubview(countHeaderLabel)
+        view.addSubview(countHeaderNumber)
+        
+        
+        view.addSubview(allDocumentsTypesView)
+        allDocumentsTypesView.firstCell.set(rowNumber: 0, docList: docList, category: DocumentStruct.Category.facture)
+
         
         NSLayoutConstraint.activate([
             topMargin.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
@@ -52,24 +76,37 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
             countHeaderLabel.topAnchor.constraint(equalTo: topMargin.bottomAnchor, constant: 30),
             countHeaderLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             countHeaderLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            countHeaderLabel.heightAnchor.constraint(equalToConstant: 60),
+            countHeaderLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            countHeaderNumber.topAnchor.constraint(equalTo: countHeaderLabel.bottomAnchor, constant: 0),
+            countHeaderNumber.topAnchor.constraint(equalTo: countHeaderLabel.bottomAnchor, constant: 20),
             countHeaderNumber.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             countHeaderNumber.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            countHeaderNumber.heightAnchor.constraint(equalToConstant: 50)
+            countHeaderNumber.heightAnchor.constraint(equalToConstant: 50),
+            
+            allDocumentsTypesView.topAnchor.constraint(equalTo: countHeaderNumber.bottomAnchor, constant: 30),
+            allDocumentsTypesView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            allDocumentsTypesView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            allDocumentsTypesView.heightAnchor.constraint(equalToConstant: 500)
         ])
     }
     
-    func setLabels() {
+    private func setLabels() {
         reportTitleLabel.text = "Raport"
         countHeaderLabel.text = "Liczba wszystkich dokumentów:"
         countHeaderNumber.text = String(docList.count)
-        firstDocTypeLabel.text = DocumentStruct.Category.facture.rawValue
+        allDocumentsTypesView.firstCell.docLabel.text = "Faktury:"
+        allDocumentsTypesView.firstCell.docNumber.text = String(reportList.count)
+        allDocumentsTypesView.secondCell.docLabel.text = "Paragony:"
+        allDocumentsTypesView.secondCell.docNumber.text = String(recieptList.count)
+        allDocumentsTypesView.thirdCell.docLabel.text = "Protokoły:"
+        allDocumentsTypesView.thirdCell.docNumber.text = String(reportList.count)
+        allDocumentsTypesView.fourthCell.docLabel.text = "Raporty końcowe:"
+        allDocumentsTypesView.fourthCell.docNumber.text = String(summaryList.count)
+//        firstDocTypeLabel.text = DocumentStruct.Category.facture.rawValue
         
     }
     
-    func configureTabBar() {
+    private func configureTabBar() {
         let tabBar = tabBarController as! BaseTabBarController
         docList = tabBar.fullDocumentList
     }
