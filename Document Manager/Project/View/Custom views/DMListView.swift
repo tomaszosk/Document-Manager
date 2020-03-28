@@ -27,7 +27,6 @@ class DMListView: UIView {
     }
     
     private func setupView() {
-//        backgroundColor = Colors.orange
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(descriptionLabel)
