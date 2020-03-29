@@ -13,7 +13,7 @@ protocol AddDoc {
     func addDoc(document: DocumentStruct)
 }
 
-class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIDocumentInteractionControllerDelegate {
     
     var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!, category: .all)
     let docTypesArray: [String] = ["Wszystkie", "Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
@@ -183,6 +183,19 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
             default: return
         }
     }
+    
+//    func writeDataToFile(file:String)-> Bool{
+//        // check our data exists
+//        guard let data = textView.text else {return false}
+//        //get the file path for the file in the bundle
+//        // if it doesn't exist, make it in the bundle
+//        var fileName = file + ".txt"
+//        if let filePath = Bundle.main.path(forResource: file, ofType: "txt"){
+//            fileName = filePath
+//        } else {
+//            fileName = Bundle.main.bundlePath + fileName
+//        }
+//    }
 }
 
 
