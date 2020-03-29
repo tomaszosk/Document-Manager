@@ -9,7 +9,7 @@
 import UIKit
 //import Macaw
 
-class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
     var docList: [DocumentStruct] = []
     

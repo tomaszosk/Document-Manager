@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76027B272430BB9700E921D0 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76027B262430BB9700E921D0 /* data.txt */; };
 		7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3C8235CF80F00972E59 /* AppDelegate.swift */; };
 		7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CA235CF80F00972E59 /* SceneDelegate.swift */; };
-		7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CC235CF80F00972E59 /* FirstViewController.swift */; };
-		7626C3CF235CF80F00972E59 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CE235CF80F00972E59 /* SecondViewController.swift */; };
+		7626C3CD235CF80F00972E59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CC235CF80F00972E59 /* HomeViewController.swift */; };
+		7626C3CF235CF80F00972E59 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CE235CF80F00972E59 /* ListViewController.swift */; };
 		7626C3D2235CF80F00972E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D0235CF80F00972E59 /* Main.storyboard */; };
 		7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D3235CF81200972E59 /* Assets.xcassets */; };
 		7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7626C3D5235CF81200972E59 /* LaunchScreen.storyboard */; };
 		76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D73240C34F9001D59F7 /* DocumentsCount.swift */; };
-		76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521D77240C383D001D59F7 /* MacawChartView.swift */; };
 		76521D9D240C5BC3001D59F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 76521D71240C2A12001D59F7 /* Podfile */; };
 		76521DA2240C5D41001D59F7 /* Pods_Document_Manager.framework in Resources */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
@@ -56,18 +56,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76027B262430BB9700E921D0 /* data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
 		7626C3C5235CF80F00972E59 /* Document Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Document Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7626C3C8235CF80F00972E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7626C3CA235CF80F00972E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7626C3CC235CF80F00972E59 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		7626C3CE235CF80F00972E59 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		7626C3CC235CF80F00972E59 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7626C3CE235CF80F00972E59 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		7626C3D1235CF80F00972E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7626C3D3235CF81200972E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7626C3D6235CF81200972E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7626C3D8235CF81200972E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76521D71240C2A12001D59F7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		76521D73240C34F9001D59F7 /* DocumentsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsCount.swift; sourceTree = "<group>"; };
-		76521D77240C383D001D59F7 /* MacawChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacawChartView.swift; sourceTree = "<group>"; };
 		76521D7C240C50AC001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521D7F240C50B5001D59F7 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521D82240C50C9001D59F7 /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76027B252430BB1000E921D0 /* Data Files */ = {
+			isa = PBXGroup;
+			children = (
+				76027B262430BB9700E921D0 /* data.txt */,
+			);
+			path = "Data Files";
+			sourceTree = "<group>";
+		};
 		7626C3BC235CF80F00972E59 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +159,7 @@
 		76521D6D240C21E3001D59F7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76027B252430BB1000E921D0 /* Data Files */,
 				76725CF6239EF4910043F2EF /* Document.swift */,
 				76521D73240C34F9001D59F7 /* DocumentsCount.swift */,
 				76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */,
@@ -165,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				76E08FD12410572C00BAEEF3 /* BaseTabBarController.swift */,
-				7626C3CC235CF80F00972E59 /* FirstViewController.swift */,
-				7626C3CE235CF80F00972E59 /* SecondViewController.swift */,
+				7626C3CC235CF80F00972E59 /* HomeViewController.swift */,
+				7626C3CE235CF80F00972E59 /* ListViewController.swift */,
 				76E08FD324105BCE00BAEEF3 /* SearchCollectionViewController.swift */,
 				76EC175E24117A5900761B5F /* AddDocTableViewController.swift */,
 				76904F552415036A0048C11B /* DMAlertViewController.swift */,
@@ -183,7 +192,6 @@
 				7626C3C8235CF80F00972E59 /* AppDelegate.swift */,
 				7626C3CA235CF80F00972E59 /* SceneDelegate.swift */,
 				7626C3D0235CF80F00972E59 /* Main.storyboard */,
-				76521D77240C383D001D59F7 /* MacawChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				76521D9D240C5BC3001D59F7 /* Podfile in Resources */,
 				7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */,
 				7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */,
+				76027B272430BB9700E921D0 /* data.txt in Resources */,
 				7626C3D2235CF80F00972E59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,11 +375,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7626C3CF235CF80F00972E59 /* SecondViewController.swift in Sources */,
-				76521D78240C383D001D59F7 /* MacawChartView.swift in Sources */,
+				7626C3CF235CF80F00972E59 /* ListViewController.swift in Sources */,
 				76904F562415036A0048C11B /* DMAlertViewController.swift in Sources */,
 				76521D74240C34F9001D59F7 /* DocumentsCount.swift in Sources */,
-				7626C3CD235CF80F00972E59 /* FirstViewController.swift in Sources */,
+				7626C3CD235CF80F00972E59 /* HomeViewController.swift in Sources */,
 				76B09D3824184A2400B1141A /* DocumentStruct.swift in Sources */,
 				76F90B21241E712E001CCC46 /* UIViewExtension.swift in Sources */,
 				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
