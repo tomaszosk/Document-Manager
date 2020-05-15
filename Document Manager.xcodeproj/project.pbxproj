@@ -19,6 +19,7 @@
 		76521D9D240C5BC3001D59F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 76521D71240C2A12001D59F7 /* Podfile */; };
 		76521DA2240C5D41001D59F7 /* Pods_Document_Manager.framework in Resources */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
+		7667696A246EAF1E009CD002 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 76676969246EAF1E009CD002 /* image.png */; };
 		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
 		768672C4242F6744000D510E /* DMListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768672C3242F6744000D510E /* DMListView.swift */; };
 		768672C6242F6B67000D510E /* DMListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768672C5242F6B67000D510E /* DMListViewCell.swift */; };
@@ -78,6 +79,7 @@
 		76521D9A240C5B45001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521DA8240D402C001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTypes.swift; sourceTree = "<group>"; };
+		76676969246EAF1E009CD002 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		768672C3242F6744000D510E /* DMListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListView.swift; sourceTree = "<group>"; };
 		768672C5242F6B67000D510E /* DMListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListViewCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				76DB8C0123A1ABA600B8DB34 /* Project */,
 				7626C3D3235CF81200972E59 /* Assets.xcassets */,
 				7626C3D5235CF81200972E59 /* LaunchScreen.storyboard */,
+				76676969246EAF1E009CD002 /* image.png */,
 				7626C3D8235CF81200972E59 /* Info.plist */,
 			);
 			path = "Document Manager";
@@ -338,6 +341,7 @@
 				76521D9D240C5BC3001D59F7 /* Podfile in Resources */,
 				7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */,
 				7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */,
+				7667696A246EAF1E009CD002 /* image.png in Resources */,
 				76027B272430BB9700E921D0 /* data.txt in Resources */,
 				7626C3D2235CF80F00972E59 /* Main.storyboard in Resources */,
 			);
