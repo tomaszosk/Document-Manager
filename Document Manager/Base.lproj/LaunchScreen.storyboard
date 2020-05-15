@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="2KA-Kr-EAV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="image-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="2KA-Kr-EAV">
                                 <rect key="frame" x="82" y="164" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="SyG-sF-OLT"/>
@@ -57,6 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image.png" width="1024" height="1024"/>
+        <image name="image-3.png" width="1024" height="1024"/>
     </resources>
 </document>
