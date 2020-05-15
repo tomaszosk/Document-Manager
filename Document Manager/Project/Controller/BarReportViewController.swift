@@ -44,14 +44,16 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
         
         topMargin.backgroundColor = Colors.brightOrange
         topMargin.translatesAutoresizingMaskIntoConstraints = false
-        reportTitleLabel.textColor = .white
+        reportTitleLabel.textColor = .black
+//        countHeaderLabel.textColor = .black
+//        countHeaderLabel.textColor = .black
         
         view.addSubview(countHeaderLabel)
         view.addSubview(countHeaderNumber)
         
         
         view.addSubview(allDocumentsTypesView)
-        allDocumentsTypesView.firstCell.set(rowNumber: 0, docList: docList, category: DocumentStruct.Category.facture)
+//        allDocumentsTypesView.firstCell.set(rowNumber: 0, docList: docList, category: DocumentStruct.Category.facture)
 
         
         NSLayoutConstraint.activate([
@@ -94,8 +96,6 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
         allDocumentsTypesView.thirdCell.docNumber.text = String(reportList.count)
         allDocumentsTypesView.fourthCell.docLabel.text = "Raporty końcowe:"
         allDocumentsTypesView.fourthCell.docNumber.text = String(summaryList.count)
-//        firstDocTypeLabel.text = DocumentStruct.Category.facture.rawValue
-        
     }
     
     private func configureTabBar() {

@@ -44,9 +44,9 @@ class BaseTabBarController: UITabBarController {
         fullDocumentList.append(doc12)
         fullDocumentList.append(doc13)
         
-        let fileName = "Test"
-        let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+//        let fileName = "Test"
+//        let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+//        let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
 
 //        print(fullDocumentList)
         // Do any additional setup after loading the view.

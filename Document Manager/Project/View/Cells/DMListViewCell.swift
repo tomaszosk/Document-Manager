@@ -35,6 +35,8 @@ class DMListViewCell: UIView {
         addSubview(docLabel)
         addSubview(docNumber)
         
+        docLabel.textColor = .black
+        docNumber.textColor = .black
 //        docLabel.backgroundColor = .systemPink
 //        docNumber.backgroundColor = .systemGray
         

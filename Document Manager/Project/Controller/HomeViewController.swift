@@ -7,14 +7,13 @@
 //
 
 import UIKit
-//import Macaw
 
 class HomeViewController: UIViewController {
     
     let logoLabel = DMTitleLabel(textAlignment: .center, fontSize: 46)
-    let locationLabel = DMTitleLabel(textAlignment: .center, fontSize: 24)
+    let locationLabel = DMTitleLabel(textAlignment: .center, fontSize: 20)
+    let appLogoImage = DMFrontImageView(frame: .zero)
     let descriptionLabel = DMBodyLabel(textAlignment: .left)
-    let addFromFileButton = DMButton(backgroundColor: Colors.blue, title: "+")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +24,18 @@ class HomeViewController: UIViewController {
     private func configureTheView() {
         view.addSubview(logoLabel)
         view.addSubview(locationLabel)
+        view.addSubview(appLogoImage)
         view.addSubview(descriptionLabel)
-        view.addSubview(addFromFileButton)
         
-        logoLabel.backgroundColor = Colors.veryDarkGray
-        locationLabel.backgroundColor = Colors.darkGrey
-        descriptionLabel.backgroundColor = Colors.lightGray
+        appLogoImage.image = UIImage(named: "image-3")!
+        appLogoImage.contentMode = .scaleAspectFit
+        
+        descriptionLabel.backgroundColor = .systemGray5
+        descriptionLabel.alpha = 0.9
         descriptionLabel.layer.cornerRadius = 10
         descriptionLabel.layer.masksToBounds = true
         descriptionLabel.numberOfLines = 0
         
-        logoLabel.textColor = .white
-        locationLabel.textColor = .white
-        descriptionLabel.textColor = .black
         
         let padding: CGFloat = 20
         
@@ -52,26 +50,45 @@ class HomeViewController: UIViewController {
             locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             locationLabel.heightAnchor.constraint(equalToConstant: 30),
             
-            descriptionLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 80),
+            appLogoImage.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 30),
+            appLogoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            appLogoImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            appLogoImage.heightAnchor.constraint(equalToConstant: 100),
+            
+            descriptionLabel.topAnchor.constraint(equalTo: appLogoImage.bottomAnchor, constant: 50),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 400),
-            
-            addFromFileButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 50),
-            addFromFileButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100),
-            addFromFileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100),
-            addFromFileButton.heightAnchor.constraint(equalToConstant: 44)
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 400)
         ])
         
     }
     
     private func setLabels() {
-        logoLabel.text = "Junkers - Bosch"
+        
+        let attributedString = NSMutableAttributedString.init(string: "Junkers-Bosch")
+        attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
+            NSRange.init(location: 0, length: attributedString.length));
+        logoLabel.attributedText = attributedString
+        
         locationLabel.text = "Oddział Warszawa-Targówek"
         descriptionLabel.text = """
-            1. Wskazówki
-            2. Jakiś opic
-            3. Cos tam jeszcze
+            Sposób dodawania dokumentów:
+        
+                1. Wypełnić pole Nazwa Dokumentu wg:
+                Nazwisko_Imię(Klienta)
+        
+                2. Wybrać typ dokumentu
+        
+                3. Zrobić zdjęcie (skan) dokumentu,
+                    bądź wybrać z rolki aparatu
+        
+                4. Wybrać datę utworzenia
+        
+                5. [OPCJONALNE] Udostępnienie
+                    (np. poprzez mail)
+        
+                6. Dodać w aplikacji przyciskiem
+                    w prawym górnym rogu
         """
     }
 
