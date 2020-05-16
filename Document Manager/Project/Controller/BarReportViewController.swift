@@ -28,13 +28,11 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
         super.viewDidLoad()
         configureTabBar()
         configureTheView()
-
         setLabels()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         configureTabBar()
-        
         setLabels()
     }
 
@@ -42,19 +40,15 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
         view.addSubview(topMargin)
         topMargin.addSubview(reportTitleLabel)
         
-        topMargin.backgroundColor = Colors.brightOrange
+        topMargin.backgroundColor = .darkGray
         topMargin.translatesAutoresizingMaskIntoConstraints = false
         reportTitleLabel.textColor = .black
-//        countHeaderLabel.textColor = .black
-//        countHeaderLabel.textColor = .black
         
         view.addSubview(countHeaderLabel)
         view.addSubview(countHeaderNumber)
         
         
         view.addSubview(allDocumentsTypesView)
-//        allDocumentsTypesView.firstCell.set(rowNumber: 0, docList: docList, category: DocumentStruct.Category.facture)
-
         
         NSLayoutConstraint.activate([
             topMargin.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),

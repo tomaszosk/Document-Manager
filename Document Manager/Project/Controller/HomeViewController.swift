@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
         descriptionLabel.text = """
             Sposób dodawania dokumentów:
         
-                1. Wypełnić pole Nazwa Dokumentu wg:
+                1. Wypełnić pole wg:
                 Nazwisko_Imię(Klienta)
         
                 2. Wybrać typ dokumentu

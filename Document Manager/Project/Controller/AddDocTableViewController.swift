@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Charts
 
 protocol AddDoc {
     func addDoc(document: DocumentStruct)
@@ -63,6 +62,8 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddDocTableViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
+        
+        
 
     }
     
@@ -154,6 +155,29 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         } else {
             presentDMLAlertOnMainThread(title: "Puste pola!", message: "Nie można dodać dokumentu. Jedno z pól do uzupełnienia jest puste", buttonTitle: "Ok")
         }
+        
+        let fileName = newDocument.name
+        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        
+        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+        
+        let writeString = """
+        \(newDocument.name)
+        """
+        do {
+            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
+        }
+        
+        var readString = ""
+        do {
+            readString = try String(contentsOf: fileURL)
+        } catch let error as NSError {
+            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
+        }
+        print("File Text: \(readString)")
+        
      }
     
     // MARK: Helper Methods
@@ -182,22 +206,32 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         }
     }
     
-//    func writeDataToFile(file:String)-> Bool{
-//        // check our data exists
-//        guard let data = textView.text else {return false}
-//        //get the file path for the file in the bundle
-//        // if it doesn't exist, make it in the bundle
-//        var fileName = file + ".txt"
-//        if let filePath = Bundle.main.path(forResource: file, ofType: "txt"){
-//            fileName = filePath
-//        } else {
-//            fileName = Bundle.main.bundlePath + fileName
+    // MARK: Saving Data to txt file
+    
+//    func readDataFromFile(file:String)-> String!{
+//        guard let filepath = Bundle.main.path(forResource: file, ofType: "txt")
+//                else {
+//                    return nil
+//            }
+//        do {
+//            let contents = try String(contentsOfFile: filepath, usedEncoding: String.Encoding.ascii.rawValue)
+//           return contents
+//        } catch {
+//            print("File Read Error for file \(filepath)")
+//            return nil
 //        }
 //    }
+    
+//    func readDataFromFile(file:String)-> String!{
+//        guard let filepath = NSBundle.mainBundle().pathForResource(file, ofType: "txt")
+//            else {
+//               return nil
+//        }
+//
+//    }
+    
+
 }
-
-
-
 
 extension UIViewController {
     func presentDMLAlertOnMainThread(title: String, message: String, buttonTitle: String) {
@@ -241,9 +275,10 @@ extension AddDocTableViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         
         label.textColor = .black
         label.textAlignment = .center
-        
         label.text = docTypesArray[row]
         
         return label
     }
 }
+
+
