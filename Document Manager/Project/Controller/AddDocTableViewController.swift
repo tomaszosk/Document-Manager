@@ -12,10 +12,10 @@ protocol AddDoc {
     func addDoc(document: DocumentStruct)
 }
 
-class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIDocumentInteractionControllerDelegate {
+final class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIDocumentInteractionControllerDelegate {
     
-    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!, category: .all)
-    let docTypesArray: [String] = ["Wszystkie", "Faktura", "Paragon", "Protokół instalacyjny", "Protokół seriwsowy", "Raport końcowy z dnia", "Sprawozdanie"]
+    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!, category: .all, notes: "")
+    let docTypesArray: [String] = ["Wszystkie", "Faktura", "Paragon", "Protokół", "Raport"]
     var selectedType = ""
     var rowOfSelectedType = 0
     private var datePicker: UIDatePicker?
@@ -30,15 +30,13 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var scanImageView: UIImageView!
     @IBOutlet weak var importLabel: UIButton!
+    @IBOutlet weak var notesTextField: UITextField!
     
     @IBAction func importImage(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
-        
         image.sourceType = UIImagePickerController.SourceType.photoLibrary
-        
         image.allowsEditing = false
-        
         self.present(image, animated: true) {
         }
     }
@@ -46,41 +44,32 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             scanImageView.image = image
-        } else {
-          return
-        }
-        
+        } else { return }
         self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         createTypePicker()
         createToolbar()
         createDatePicker()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(AddDocTableViewController.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
-        
-        
-
     }
     
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
-    func createTypePicker() {
-        
+    private func createTypePicker() {
         let typePicker = UIPickerView()
         typePicker.delegate = self
-        
         typeTextField.inputView = typePicker
         typePicker.backgroundColor = .systemFill
     }
     
-    func createToolbar() {
+    private func createToolbar() {
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
@@ -88,30 +77,26 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
-        
         typeTextField.inputAccessoryView = toolBar
         dateTextField.inputAccessoryView = toolBar
-        
         toolBar.barTintColor = .systemFill
         toolBar.tintColor = .black
-    }
-    
-    func createDatePicker() {
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(AddDocTableViewController.dateChanged(datePicker:)), for: .valueChanged)
-        
-        dateTextField.inputView = datePicker
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
+    private func createDatePicker() {
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(AddDocTableViewController.dateChanged(datePicker:)), for: .valueChanged)
+        dateTextField.inputView = datePicker
+    }
+    
     @objc func dateChanged(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        
         dateTextField.text = dateFormatter.string(from: datePicker.date)
     }
     
@@ -122,9 +107,10 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
             let activityController = UIActivityViewController(activityItems: [stringToShare], applicationActivities: nil)
             
             activityController.completionWithItemsHandler = { (nil, completed, _, error) in
-                if completed {
+                switch completed {
+                case true:
                     print("Completed")
-                } else {
+                case false:
                     print("The user canceled sharing")
                 }
             }
@@ -147,8 +133,8 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     // MARK: - Navigation
      
      @IBAction func AddDocument(_ sender: UIBarButtonItem) {
-        if (documentNameTextField.text != "") && (typeTextField.text != "Wybierz typ dokumentu") && (dateTextField.text != "Wybierz datę") {
-            newDocument = DocumentStruct(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!, category: .all)
+        if (documentNameTextField.text != "") && (typeTextField.text != "Wybierz typ dokumentu") && (dateTextField.text != "Wybierz datę") && (notesTextField.text != ""){
+            newDocument = DocumentStruct(name: documentNameTextField.text!, type: typeTextField.text!, dateAdded: dateTextField.text!, image: scanImageView.image!, category: .all, notes: notesTextField.text!)
             setTheType(row: rowOfSelectedType)
             delegate?.addDoc(document: newDocument)
             navigationController?.popViewController(animated: true)
@@ -162,7 +148,8 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
         let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
         
         let writeString = """
-        \(newDocument.name)
+        Data Utworzenia: \(newDocument.dateAdded)
+        Uwagi: \(newDocument.notes)
         """
         do {
             try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
@@ -170,13 +157,13 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
             print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
         }
         
-        var readString = ""
-        do {
-            readString = try String(contentsOf: fileURL)
-        } catch let error as NSError {
-            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
-        }
-        print("File Text: \(readString)")
+//        var readString = ""
+//        do {
+//            readString = try String(contentsOf: fileURL)
+//        } catch let error as NSError {
+//            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
+//        }
+//        print("File Text: \(readString)")
         
      }
     
@@ -191,7 +178,6 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
     
     func documentSharing(documentName: String, documentType: String, dateCreated: String) -> String {
         let shareText = "Dokument o nazwie: \(documentName) i rodzaju: \(documentType) został utworzony w aplikacji dnia: \(dateCreated)"
-        
         return shareText
     }
     
@@ -205,32 +191,6 @@ class AddDocTableViewController: UITableViewController, UINavigationControllerDe
             default: return
         }
     }
-    
-    // MARK: Saving Data to txt file
-    
-//    func readDataFromFile(file:String)-> String!{
-//        guard let filepath = Bundle.main.path(forResource: file, ofType: "txt")
-//                else {
-//                    return nil
-//            }
-//        do {
-//            let contents = try String(contentsOfFile: filepath, usedEncoding: String.Encoding.ascii.rawValue)
-//           return contents
-//        } catch {
-//            print("File Read Error for file \(filepath)")
-//            return nil
-//        }
-//    }
-    
-//    func readDataFromFile(file:String)-> String!{
-//        guard let filepath = NSBundle.mainBundle().pathForResource(file, ofType: "txt")
-//            else {
-//               return nil
-//        }
-//
-//    }
-    
-
 }
 
 extension UIViewController {

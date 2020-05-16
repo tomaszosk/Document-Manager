@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+final class BaseTabBarController: UITabBarController {
     
 //    var doc1: DocumentStruct = DocumentStruct(name: "Dokument 1", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .reciept)
 //    var doc2: DocumentStruct = DocumentStruct(name: "Dokument 2", type: "Paragon", dateAdded: "dd/MM/yyyy", image: UIImage(named: "blankphoto")!, category: .report)
@@ -44,12 +44,6 @@ class BaseTabBarController: UITabBarController {
 //        fullDocumentList.append(doc12)
 //        fullDocumentList.append(doc13)
 //        
-//        let fileName = "Test"
-//        let documentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//        let fileURL = documentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
-
-//        print(fullDocumentList)
-        // Do any additional setup after loading the view.
     }
 
 }

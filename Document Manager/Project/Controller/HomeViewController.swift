@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     let logoLabel = DMTitleLabel(textAlignment: .center, fontSize: 46)
     let locationLabel = DMTitleLabel(textAlignment: .center, fontSize: 20)

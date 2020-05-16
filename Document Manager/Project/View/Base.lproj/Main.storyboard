@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -148,10 +148,34 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Data wystawienia:" footerTitle="" id="gFk-C8-j26">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="izM-kX-4oX">
+                                        <rect key="frame" x="20" y="273.33333206176758" width="374" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="izM-kX-4oX" id="hhG-5W-s8x">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wybierz datę" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFW-3f-mAF">
+                                                    <rect key="frame" x="20" y="4.6666679382324219" width="334" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <accessibilityTraits key="traits" none="YES"/>
+                                                        <bool key="isElement" value="NO"/>
+                                                    </accessibility>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Skan dokumentu:" footerTitle="" id="fwR-RW-IOn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="215" id="ge5-WE-SF8">
-                                        <rect key="frame" x="20" y="273.33333206176758" width="374" height="215"/>
+                                        <rect key="frame" x="20" y="384.33333206176758" width="374" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ge5-WE-SF8" id="zpE-ek-ZT2">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
@@ -218,47 +242,48 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Data wystawienia:" footerTitle="" id="gFk-C8-j26">
+                            <tableViewSection headerTitle="Uwagi:" footerTitle="" id="8Qh-9R-yzu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="izM-kX-4oX">
-                                        <rect key="frame" x="20" y="555.66666412353516" width="374" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ppm-VZ-XW1">
+                                        <rect key="frame" x="20" y="666.66666412353516" width="374" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="izM-kX-4oX" id="hhG-5W-s8x">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ppm-VZ-XW1" id="BIW-bB-MMh">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wybierz datę" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bFW-3f-mAF">
-                                                    <rect key="frame" x="20" y="4.6666679382324219" width="334" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <accessibility key="accessibilityConfiguration">
-                                                        <accessibilityTraits key="traits" none="YES"/>
-                                                        <bool key="isElement" value="NO"/>
-                                                    </accessibility>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wpisz uwagi" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IjC-0Q-rOi">
+                                                    <rect key="frame" x="20" y="5" width="334" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="IjC-0Q-rOi" secondAttribute="trailing" constant="20" id="L8I-ny-gbI"/>
+                                                <constraint firstAttribute="bottom" secondItem="IjC-0Q-rOi" secondAttribute="bottom" constant="4.6699999999999999" id="R93-7C-eq6"/>
+                                                <constraint firstItem="IjC-0Q-rOi" firstAttribute="leading" secondItem="BIW-bB-MMh" secondAttribute="leading" constant="20" id="ROP-yu-Jbd"/>
+                                                <constraint firstItem="IjC-0Q-rOi" firstAttribute="top" secondItem="BIW-bB-MMh" secondAttribute="top" constant="5" id="t5x-9x-BX0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Udostępnianie:" footerTitle="" id="dws-e8-S2i">
+                            <tableViewSection headerTitle="Powiadomienie" footerTitle="" id="dws-e8-S2i">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VYc-0a-u3d">
-                                        <rect key="frame" x="20" y="666.66666412353516" width="374" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="777.66666412353516" width="374" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VYc-0a-u3d" id="wIg-Rd-cgr">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zapisz utworzony dokument:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFs-6G-Fxu">
-                                                    <rect key="frame" x="20.000000000000014" y="11.000000000000002" width="221.33333333333337" height="22.666666666666671"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poinformuj o utworzeniu:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFs-6G-Fxu">
+                                                    <rect key="frame" x="20" y="11.000000000000002" width="189.66666666666666" height="22.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-Bn-y2c">
-                                                    <rect key="frame" x="331" y="12" width="23" height="21"/>
+                                                    <rect key="frame" x="299.33333333333331" y="12" width="54.666666666666686" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                                     <state key="normal" title="Button" image="square.and.arrow.up" catalog="system"/>
                                                     <connections>
@@ -295,6 +320,7 @@
                         <outlet property="dateTextField" destination="bFW-3f-mAF" id="ABQ-YS-wgd"/>
                         <outlet property="documentNameTextField" destination="zD3-cF-wNe" id="uJe-G0-Ee3"/>
                         <outlet property="importLabel" destination="8ua-LV-gA8" id="uom-bS-not"/>
+                        <outlet property="notesTextField" destination="IjC-0Q-rOi" id="awC-AI-WrS"/>
                         <outlet property="scanImageView" destination="qRb-vY-ojI" id="XdL-m7-TQH"/>
                         <outlet property="typeTextField" destination="RNi-IO-lkJ" id="ats-HB-mO7"/>
                     </connections>
@@ -387,13 +413,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
-        <image name="doc.on.doc.fill" catalog="system" width="58" height="64"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="magnifyingglass.circle" catalog="system" width="64" height="60"/>
-        <image name="photo.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="doc.on.doc.fill" catalog="system" width="117" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="98"/>
         <image name="second" width="30" height="30"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
     </resources>
 </document>

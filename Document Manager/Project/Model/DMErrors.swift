@@ -8,8 +8,8 @@
 
 import Foundation
 
-enum DMError: String, Error {
-    case nameTextFieldEmpty = "Dokument nie ma nazwy"
-    case typeTextFieldEmpty = "Brak określonego typu dokumentu"
-    case dateNotSet = "Data utworzenia jest pusta"
-}
+//enum DMError: String, Error {
+//    case nameTextFieldEmpty = "Dokument nie ma nazwy"
+//    case typeTextFieldEmpty = "Brak określonego typu dokumentu"
+//    case dateNotSet = "Data utworzenia jest pusta"
+//}

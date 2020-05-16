@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DocumentsCount {
-    var documentCountNumber: String
-    var typeCount: Double
-}
+//struct DocumentsCount {
+//    var documentCountNumber: String
+//    var typeCount: Double
+//}

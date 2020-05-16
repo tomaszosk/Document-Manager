@@ -7,9 +7,8 @@
 //
 
 import UIKit
-//import Macaw
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
+final class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDoc {
     
     var docList: [DocumentStruct] = []
     
@@ -17,9 +16,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let tabBar = tabBarController as! BaseTabBarController
-        docList = tabBar.fullDocumentList
+        configureTabBar()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -27,15 +24,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         tabBar.fullDocumentList = docList
     }
     
+    private func configureTabBar() {
+        let tabBar = tabBarController as! BaseTabBarController
+        docList = tabBar.fullDocumentList
+    }
+    
     // MARK: Table View Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return (docList.count)
     }
 
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
         cell.textLabel?.text = docList[indexPath.row].name
         
@@ -43,18 +42,16 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         if editingStyle == UITableViewCell.EditingStyle.delete{
             self.docList.remove(at: indexPath.row)
             docTableView.reloadData()
         }
-        
     }
     
     // MARK: Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddDocTableViewController
-        vc.delegate = self
+        let viewController = segue.destination as! AddDocTableViewController
+        viewController.delegate = self
     }
     
     func addDoc(document: DocumentStruct) {

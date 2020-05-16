@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DMListViewCell: UIView {
+final class DMListViewCell: UIView {
     
     let docLabel = DMTitleLabel(textAlignment: .left, fontSize: 20)
     let docNumber = DMTitleLabel(textAlignment: .right, fontSize: 24)
@@ -22,10 +22,10 @@ class DMListViewCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(rowNumber: Int, docList: [DocumentStruct], category: DocumentStruct.Category) {
-//        docLabel.text = String(category.rawValue)
-//        docNumber.text = String(docList.count)
-    }
+//    func set(rowNumber: Int, docList: [DocumentStruct], category: DocumentStruct.Category) {
+////        docLabel.text = String(category.rawValue)
+////        docNumber.text = String(docList.count)
+//    }
     
     private func setupView() {
         backgroundColor = Colors.orange

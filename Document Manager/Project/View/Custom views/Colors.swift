@@ -6,7 +6,6 @@
 //  Copyright © 2020 Tomasz Oskroba. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct Colors {

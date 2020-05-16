@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DMFrontImageView: UIImageView {
+final class DMFrontImageView: UIImageView {
     
     let placeholderImage = UIImage(named: "blankphoto")!
 

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class DocumentCell: UICollectionViewCell {
+final class DocumentCell: UICollectionViewCell {
     static let reuseID = "DocumentCell"
     
-    let frontImageView = DMFrontImageView(frame: .zero)
-    let documentLabel = DMTitleLabel(textAlignment: .center, fontSize: 12)
+    let frontImageView = DMFrontImageView(frame: .zero),
+        documentLabel = DMTitleLabel(textAlignment: .center, fontSize: 12)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

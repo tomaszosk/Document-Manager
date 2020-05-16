@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchCollectionViewController: UIViewController {
+final class SearchCollectionViewController: UIViewController {
     
     enum Section { case main }
     
@@ -17,23 +17,26 @@ class SearchCollectionViewController: UIViewController {
     var documentName: String!
     var isSearching = false
     
+    let searchController = UISearchController(searchResultsController: nil)
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, DocumentStruct>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTabBar()
         configureSearchViewController()
         configureCollectionView()
         configureDataSource()
-        
-        let tabBar = tabBarController as! BaseTabBarController
-        searchDocList = tabBar.fullDocumentList
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        configureTabBar()
+        updateData(on: searchDocList)
+    }
+    
+    private func configureTabBar() {
         let tabBar = tabBarController as! BaseTabBarController
         searchDocList = tabBar.fullDocumentList
-        updateData(on: searchDocList)
     }
 
     func createThreeColumnFlowLayout() -> UICollectionViewFlowLayout {
@@ -50,7 +53,7 @@ class SearchCollectionViewController: UIViewController {
         return flowLayout
     }
     
-    func configureCollectionView() {
+    private func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createThreeColumnFlowLayout())
         view.addSubview(collectionView)
         
@@ -59,7 +62,7 @@ class SearchCollectionViewController: UIViewController {
         collectionView.register(DocumentCell.self, forCellWithReuseIdentifier: DocumentCell.reuseID)
     }
     
-    func configureSearchViewController() {
+    private func configureSearchViewController() {
         let searchController = UISearchController()
         searchController.searchResultsUpdater = self
         searchController.searchBar.scopeButtonTitles = DocumentStruct.Category.allCases.map { $0.rawValue }
@@ -69,10 +72,9 @@ class SearchCollectionViewController: UIViewController {
         searchController.searchBar.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 60)
         
         navigationItem.searchController = searchController
-        
     }
     
-    func configureDataSource() {
+    private func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, DocumentStruct>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, document) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DocumentCell.reuseID, for: indexPath) as! DocumentCell
             cell.set(document: document)
@@ -81,14 +83,12 @@ class SearchCollectionViewController: UIViewController {
         })
     }
     
-    func updateData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, DocumentStruct>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(searchDocList)
-        DispatchQueue.main.async {
-            self.dataSource.apply(snapshot, animatingDifferences: true)
-        }
-        
+}
+
+extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
     }
     
     func updateData(on searchDocList: [DocumentStruct]) {
@@ -99,37 +99,27 @@ class SearchCollectionViewController: UIViewController {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
     }
-    let searchController = UISearchController(searchResultsController: nil)
     
-    var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
-    func filterContentForSearchText(_ searchText: String,
-                                    category: DocumentStruct.Category? = nil) {
+    func filterContentForSearchText(_ searchText: String, category: DocumentStruct.Category? = nil) {
       filteredDocuments = searchDocList.filter { (document: DocumentStruct) -> Bool in
         let doesCategoryMatch = category == .all || document.category == category
         
-        if isSearchBarEmpty {
-          return doesCategoryMatch
-        } else {
-          return doesCategoryMatch && document.name.lowercased().contains(searchText.lowercased())
+        switch isSearchBarEmpty {
+        case true:
+            return doesCategoryMatch
+        case false:
+            return doesCategoryMatch && document.name.lowercased().contains(searchText.lowercased())
         }
       }
-      
       updateData(on: searchDocList)
     }
-}
-
-extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
         isSearching = true
         
         let searchBar = searchController.searchBar
-        let category = DocumentStruct.Category(rawValue:
-          searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
+        let category = DocumentStruct.Category(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
         filterContentForSearchText(searchBar.text!, category: category)
         
         filteredDocuments = searchDocList.filter { $0.name.lowercased().contains(filter.lowercased()) }

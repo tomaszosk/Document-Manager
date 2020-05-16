@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum DocumentTypes: String {
-    case report = "Raport"
-    case reciept = "Paragon"
-    case facture = "Faktura"
-    case protocoleDocument = "Protokół"
-}
+//enum DocumentTypes: String {
+//    case report = "Raport"
+//    case reciept = "Paragon"
+//    case facture = "Faktura"
+//    case protocoleDocument = "Protokół"
+//}

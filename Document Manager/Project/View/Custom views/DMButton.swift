@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DMButton: UIButton {
+final class DMButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DMAlertViewController: UIViewController {
+final class DMAlertViewController: UIViewController {
     
     let containerView = UIView()
     let titleLabel = DMTitleLabel(textAlignment: .center, fontSize: 20)
@@ -41,7 +41,7 @@ class DMAlertViewController: UIViewController {
         configureMessageLabel()
     }
     
-    func configureContainerView() {
+    private func configureContainerView() {
         view.addSubview(containerView)
         containerView.backgroundColor = .systemBackground
         containerView.layer.cornerRadius = 16
@@ -57,7 +57,7 @@ class DMAlertViewController: UIViewController {
         ])
     }
     
-    func configureTitleLabel() {
+    private func configureTitleLabel() {
         containerView.addSubview(titleLabel)
         titleLabel.text = alertTitle ?? "Something went wrong"
         
@@ -69,7 +69,11 @@ class DMAlertViewController: UIViewController {
         ])
     }
     
-    func configureActionButton() {
+    @objc func dismissViewController() {
+        dismiss(animated: true)
+    }
+    
+    private func configureActionButton() {
         containerView.addSubview(actionButton)
         actionButton.setTitle(buttonTitle ?? "Ok", for: .normal)
         actionButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
@@ -82,11 +86,7 @@ class DMAlertViewController: UIViewController {
         ])
     }
     
-    @objc func dismissViewController() {
-        dismiss(animated: true)
-    }
-    
-    func configureMessageLabel() {
+    private func configureMessageLabel() {
         containerView.addSubview(messageLabel)
         messageLabel.text = message ?? "Unable to complete request"
         messageLabel.numberOfLines = 4

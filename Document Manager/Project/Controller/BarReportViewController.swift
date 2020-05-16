@@ -8,21 +8,19 @@
 
 import UIKit
 
-class BarReportViewController: UIViewController, UINavigationControllerDelegate {
+final class BarReportViewController: UIViewController, UINavigationControllerDelegate {
     
-    var docList: [DocumentStruct] = []
+    var docList: [DocumentStruct] = [],
+        factureList: [DocumentStruct] = [],
+        recieptList: [DocumentStruct] = [],
+        reportList: [DocumentStruct] = [],
+        summaryList: [DocumentStruct] = []
     
-    let topMargin = UIView()
-    let reportTitleLabel = DMTitleLabel(textAlignment: .center, fontSize: 36)
-    let countHeaderLabel = DMTitleLabel(textAlignment: .center, fontSize: 24)
-    let countHeaderNumber = DMTitleLabel(textAlignment: .center, fontSize: 42)
-    
-    let allDocumentsTypesView = DMListView()
-    
-    var factureList: [DocumentStruct] = []
-    var recieptList: [DocumentStruct] = []
-    var reportList: [DocumentStruct] = []
-    var summaryList: [DocumentStruct] = []
+    let topMargin = UIView(),
+        reportTitleLabel = DMTitleLabel(textAlignment: .center, fontSize: 36),
+        countHeaderLabel = DMTitleLabel(textAlignment: .center, fontSize: 24),
+        countHeaderNumber = DMTitleLabel(textAlignment: .center, fontSize: 42),
+        allDocumentsTypesView = DMListView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +81,7 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
         countHeaderLabel.text = "Liczba wszystkich dokumentów:"
         countHeaderNumber.text = String(docList.count)
         allDocumentsTypesView.firstCell.docLabel.text = "Faktury:"
-        allDocumentsTypesView.firstCell.docNumber.text = String(reportList.count)
+        allDocumentsTypesView.firstCell.docNumber.text = String(factureList.count)
         allDocumentsTypesView.secondCell.docLabel.text = "Paragony:"
         allDocumentsTypesView.secondCell.docNumber.text = String(recieptList.count)
         allDocumentsTypesView.thirdCell.docLabel.text = "Protokoły:"
@@ -101,14 +99,26 @@ class BarReportViewController: UIViewController, UINavigationControllerDelegate 
     
     private func updateCountNumbers() {
         for documentCategorized in docList {
-            if documentCategorized.category == .facture {
+//            if documentCategorized.category == .facture {
+//                factureList.append(documentCategorized)
+//            } else if documentCategorized.category == .reciept {
+//                recieptList.append(documentCategorized)
+//            } else if documentCategorized.category == .report {
+//                reportList.append(documentCategorized)
+//            } else if documentCategorized.category == .summary {
+//                summaryList.append(documentCategorized)
+//            }
+            switch documentCategorized.category {
+            case .facture:
                 factureList.append(documentCategorized)
-            } else if documentCategorized.category == .reciept {
+            case .reciept:
                 recieptList.append(documentCategorized)
-            } else if documentCategorized.category == .report {
+            case .report:
                 reportList.append(documentCategorized)
-            } else if documentCategorized.category == .summary {
+            case .summary:
                 summaryList.append(documentCategorized)
+            default:
+                return
             }
         }
     }

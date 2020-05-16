@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76027B272430BB9700E921D0 /* data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 76027B262430BB9700E921D0 /* data.txt */; };
 		7626C3C9235CF80F00972E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3C8235CF80F00972E59 /* AppDelegate.swift */; };
 		7626C3CB235CF80F00972E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CA235CF80F00972E59 /* SceneDelegate.swift */; };
 		7626C3CD235CF80F00972E59 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7626C3CC235CF80F00972E59 /* HomeViewController.swift */; };
@@ -19,11 +18,9 @@
 		76521D9D240C5BC3001D59F7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 76521D71240C2A12001D59F7 /* Podfile */; };
 		76521DA2240C5D41001D59F7 /* Pods_Document_Manager.framework in Resources */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 		76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */; };
-		76725CF7239EF4910043F2EF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76725CF6239EF4910043F2EF /* Document.swift */; };
 		768672C4242F6744000D510E /* DMListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768672C3242F6744000D510E /* DMListView.swift */; };
 		768672C6242F6B67000D510E /* DMListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768672C5242F6B67000D510E /* DMListViewCell.swift */; };
 		768AF7EB246EB5D000A6098B /* image-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 768AF7EA246EB5D000A6098B /* image-3.png */; };
-		768AF7EF246ED2B400A6098B /* ProjectTextFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 768AF7EE246ED2B400A6098B /* ProjectTextFile.txt */; };
 		76904F542415029F0048C11B /* DMErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F532415029F0048C11B /* DMErrors.swift */; };
 		76904F562415036A0048C11B /* DMAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F552415036A0048C11B /* DMAlertViewController.swift */; };
 		76904F582415040A0048C11B /* DMTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904F572415040A0048C11B /* DMTitleLabel.swift */; };
@@ -41,6 +38,7 @@
 		76F90B1E241E6F92001CCC46 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B1D241E6F92001CCC46 /* Colors.swift */; };
 		76F90B21241E712E001CCC46 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B20241E712E001CCC46 /* UIExtensions.swift */; };
 		76F90B23241E9360001CCC46 /* BarReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F90B22241E9360001CCC46 /* BarReportViewController.swift */; };
+		F40B791BB862CE017F153587 /* Pods_Document_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,7 +56,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		76027B262430BB9700E921D0 /* data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
 		7626C3C5235CF80F00972E59 /* Document Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Document Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7626C3C8235CF80F00972E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7626C3CA235CF80F00972E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,29 +67,15 @@
 		7626C3D8235CF81200972E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76521D71240C2A12001D59F7 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		76521D73240C34F9001D59F7 /* DocumentsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsCount.swift; sourceTree = "<group>"; };
-		76521D7C240C50AC001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D7F240C50B5001D59F7 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D82240C50C9001D59F7 /* SWXMLHash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D85240C5135001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D88240C515B001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D91240C5345001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D94240C577B001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521D9A240C5B45001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76521DA8240D402C001D59F7 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTypes.swift; sourceTree = "<group>"; };
-		76725CF6239EF4910043F2EF /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		768672C3242F6744000D510E /* DMListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListView.swift; sourceTree = "<group>"; };
 		768672C5242F6B67000D510E /* DMListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMListViewCell.swift; sourceTree = "<group>"; };
 		768AF7EA246EB5D000A6098B /* image-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-3.png"; sourceTree = "<group>"; };
-		768AF7EE246ED2B400A6098B /* ProjectTextFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ProjectTextFile.txt; sourceTree = "<group>"; };
 		76904F532415029F0048C11B /* DMErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMErrors.swift; sourceTree = "<group>"; };
 		76904F552415036A0048C11B /* DMAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMAlertViewController.swift; sourceTree = "<group>"; };
 		76904F572415040A0048C11B /* DMTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DMTitleLabel.swift; path = ../DMTitleLabel.swift; sourceTree = "<group>"; };
 		76904F59241504670048C11B /* DMBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMBodyLabel.swift; sourceTree = "<group>"; };
 		76904F5B241504A30048C11B /* DMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMButton.swift; sourceTree = "<group>"; };
-		76904F5D241533E30048C11B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76904F60241534800048C11B /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A47412241158EA00FDAC4C /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76B09D2E2418352400B1141A /* DocumentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCell.swift; sourceTree = "<group>"; };
 		76B09D332418394A00B1141A /* DMFrontImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMFrontImageView.swift; sourceTree = "<group>"; };
 		76B09D352418488700B1141A /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -115,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76904F65241534F30048C11B /* Pods_Document_Manager.framework in Frameworks */,
+				F40B791BB862CE017F153587 /* Pods_Document_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,8 +108,6 @@
 		76027B252430BB1000E921D0 /* Data Files */ = {
 			isa = PBXGroup;
 			children = (
-				768AF7EE246ED2B400A6098B /* ProjectTextFile.txt */,
-				76027B262430BB9700E921D0 /* data.txt */,
 			);
 			path = "Data Files";
 			sourceTree = "<group>";
@@ -166,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				76027B252430BB1000E921D0 /* Data Files */,
-				76725CF6239EF4910043F2EF /* Document.swift */,
 				76521D73240C34F9001D59F7 /* DocumentsCount.swift */,
 				76521DAB240DBB5D001D59F7 /* DocumentTypes.swift */,
 				76904F532415029F0048C11B /* DMErrors.swift */,
@@ -263,18 +244,6 @@
 		DDF243A56B3710FAFFB30EE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				76904F60241534800048C11B /* Charts.framework */,
-				76904F5D241533E30048C11B /* Charts.framework */,
-				76A47412241158EA00FDAC4C /* Macaw.framework */,
-				76521DA8240D402C001D59F7 /* Macaw.framework */,
-				76521D9A240C5B45001D59F7 /* Macaw.framework */,
-				76521D94240C577B001D59F7 /* Macaw.framework */,
-				76521D91240C5345001D59F7 /* Macaw.framework */,
-				76521D88240C515B001D59F7 /* Macaw.framework */,
-				76521D85240C5135001D59F7 /* Macaw.framework */,
-				76521D82240C50C9001D59F7 /* SWXMLHash.framework */,
-				76521D7F240C50B5001D59F7 /* TinyConstraints.framework */,
-				76521D7C240C50AC001D59F7 /* Macaw.framework */,
 				B9AF9EDE351DE4DF07F5F20D /* Pods_Document_Manager.framework */,
 			);
 			name = Frameworks;
@@ -345,8 +314,6 @@
 				76521D9D240C5BC3001D59F7 /* Podfile in Resources */,
 				7626C3D7235CF81200972E59 /* LaunchScreen.storyboard in Resources */,
 				7626C3D4235CF81200972E59 /* Assets.xcassets in Resources */,
-				768AF7EF246ED2B400A6098B /* ProjectTextFile.txt in Resources */,
-				76027B272430BB9700E921D0 /* data.txt in Resources */,
 				7626C3D2235CF80F00972E59 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +356,6 @@
 				7626C3CD235CF80F00972E59 /* HomeViewController.swift in Sources */,
 				76B09D3824184A2400B1141A /* DocumentStruct.swift in Sources */,
 				76F90B21241E712E001CCC46 /* UIExtensions.swift in Sources */,
-				76725CF7239EF4910043F2EF /* Document.swift in Sources */,
 				76B09D362418488700B1141A /* Image.swift in Sources */,
 				76B09D2F2418352400B1141A /* DocumentCell.swift in Sources */,
 				76521DAC240DBB5D001D59F7 /* DocumentTypes.swift in Sources */,

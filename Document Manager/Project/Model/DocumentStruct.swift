@@ -15,6 +15,7 @@ struct DocumentStruct: Codable, Hashable {
     var dateAdded: String
     var image: Data
     var category: Category
+    var notes: String
     
     enum Category: Codable {
         case all
@@ -24,12 +25,13 @@ struct DocumentStruct: Codable, Hashable {
         case report
     }
     
-    public init(name: String, type: String, dateAdded: String, image: UIImage, category: Category) {
+    public init(name: String, type: String, dateAdded: String, image: UIImage, category: Category, notes: String) {
         self.name = name
         self.type = type
         self.dateAdded = dateAdded
         self.image = image.pngData()!
         self.category = category
+        self.notes = notes
     }
 }
 

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class DMListView: UIView {
+final class DMListView: UIView {
     
-    let descriptionLabel = DMTitleLabel(textAlignment: .left, fontSize: 18)
-    let firstCell = DMListViewCell()
-    let secondCell = DMListViewCell()
-    let thirdCell = DMListViewCell()
-    let fourthCell = DMListViewCell()
+    let descriptionLabel = DMTitleLabel(textAlignment: .left, fontSize: 18),
+        firstCell = DMListViewCell(),
+        secondCell = DMListViewCell(),
+        thirdCell = DMListViewCell(),
+        fourthCell = DMListViewCell()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
