@@ -10,12 +10,12 @@ import UIKit
 
 struct DocumentStruct: Codable, Hashable {
     
-    var name: String
-    var type: String
-    var dateAdded: String
-    var image: Data
-    var category: Category
-    var notes: String
+    var name: String,
+        type: String,
+        dateAdded: String,
+        image: Data,
+        category: Category,
+        notes: String
     
     enum Category: Codable {
         case all

@@ -10,17 +10,16 @@ import UIKit
 
 final class DMAlertViewController: UIViewController {
     
-    let containerView = UIView()
-    let titleLabel = DMTitleLabel(textAlignment: .center, fontSize: 20)
-    let messageLabel = DMBodyLabel(textAlignment: .center)
-    let actionButton = DMButton(backgroundColor: .systemPink, title: "Ok")
+    var alertTitle: String?,
+        message: String?,
+        buttonTitle: String?
+    
+    let containerView = UIView(),
+        titleLabel = DMTitleLabel(textAlignment: .center, fontSize: 20),
+        messageLabel = DMBodyLabel(textAlignment: .center),
+        actionButton = DMButton(backgroundColor: .systemPink, title: "Ok"),
+        padding: CGFloat = 20
 
-    var alertTitle: String?
-    var message: String?
-    var buttonTitle: String?
-    
-    let padding: CGFloat = 20
-    
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         self.alertTitle = title

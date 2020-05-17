@@ -14,14 +14,12 @@ protocol AddDoc {
 
 final class AddDocTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIDocumentInteractionControllerDelegate {
     
-    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!, category: .all, notes: "")
+    var newDocument: DocumentStruct = DocumentStruct(name: "", type: "", dateAdded: "", image: UIImage(named: "blankphoto")!, category: .all, notes: ""),
+        selectedType = "",
+        datePicker: UIDatePicker?,
+        rowOfSelectedType = 0,
+        delegate: AddDoc?
     let docTypesArray: [String] = ["Wszystkie", "Faktura", "Paragon", "Protokół", "Raport"]
-    var selectedType = ""
-    var rowOfSelectedType = 0
-    private var datePicker: UIDatePicker?
-    private let documentDescription = ""
-    
-    var delegate: AddDoc?
     
     @IBOutlet weak var documentNameTextField: UITextField!
     @IBOutlet weak var typeLabel: UILabel!
@@ -156,15 +154,6 @@ final class AddDocTableViewController: UITableViewController, UINavigationContro
         } catch let error as NSError {
             print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
         }
-        
-//        var readString = ""
-//        do {
-//            readString = try String(contentsOf: fileURL)
-//        } catch let error as NSError {
-//            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
-//        }
-//        print("File Text: \(readString)")
-        
      }
     
     // MARK: Helper Methods

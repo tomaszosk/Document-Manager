@@ -10,10 +10,11 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    let logoLabel = DMTitleLabel(textAlignment: .center, fontSize: 46)
-    let locationLabel = DMTitleLabel(textAlignment: .center, fontSize: 20)
-    let appLogoImage = DMFrontImageView(frame: .zero)
-    let descriptionLabel = DMBodyLabel(textAlignment: .left)
+    let logoLabel = DMTitleLabel(textAlignment: .center, fontSize: 46),
+        locationLabel = DMTitleLabel(textAlignment: .center, fontSize: 20),
+        appLogoImage = DMFrontImageView(frame: .zero),
+        descriptionLabel = DMBodyLabel(textAlignment: .left),
+        padding: CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,6 @@ final class HomeViewController: UIViewController {
         descriptionLabel.layer.cornerRadius = 10
         descriptionLabel.layer.masksToBounds = true
         descriptionLabel.numberOfLines = 0
-        
-        
-        let padding: CGFloat = 20
         
         NSLayoutConstraint.activate([
             logoLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
@@ -91,6 +89,5 @@ final class HomeViewController: UIViewController {
                     w prawym górnym rogu
         """
     }
-
 }
 

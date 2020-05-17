@@ -99,15 +99,6 @@ final class BarReportViewController: UIViewController, UINavigationControllerDel
     
     private func updateCountNumbers() {
         for documentCategorized in docList {
-//            if documentCategorized.category == .facture {
-//                factureList.append(documentCategorized)
-//            } else if documentCategorized.category == .reciept {
-//                recieptList.append(documentCategorized)
-//            } else if documentCategorized.category == .report {
-//                reportList.append(documentCategorized)
-//            } else if documentCategorized.category == .summary {
-//                summaryList.append(documentCategorized)
-//            }
             switch documentCategorized.category {
             case .facture:
                 factureList.append(documentCategorized)

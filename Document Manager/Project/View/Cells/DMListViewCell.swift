@@ -22,11 +22,6 @@ final class DMListViewCell: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func set(rowNumber: Int, docList: [DocumentStruct], category: DocumentStruct.Category) {
-////        docLabel.text = String(category.rawValue)
-////        docNumber.text = String(docList.count)
-//    }
-    
     private func setupView() {
         backgroundColor = Colors.orange
         layer.cornerRadius = 10
@@ -37,12 +32,9 @@ final class DMListViewCell: UIView {
         
         docLabel.textColor = .black
         docNumber.textColor = .black
-//        docLabel.backgroundColor = .systemPink
-//        docNumber.backgroundColor = .systemGray
         
         docLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         docNumber.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        let halfOfTheScreen = bounds.width / 2
         
         NSLayoutConstraint.activate([
             docLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),

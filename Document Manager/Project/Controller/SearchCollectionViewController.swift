@@ -12,14 +12,14 @@ final class SearchCollectionViewController: UIViewController {
     
     enum Section { case main }
     
-    var searchDocList = [DocumentStruct]()
-    var filteredDocuments: [DocumentStruct] = []
-    var documentName: String!
-    var isSearching = false
+    var searchDocList = [DocumentStruct](),
+        filteredDocuments: [DocumentStruct] = [],
+        documentName: String!,
+        isSearching = false,
+        collectionView: UICollectionView!,
+        dataSource: UICollectionViewDiffableDataSource<Section, DocumentStruct>!
     
     let searchController = UISearchController(searchResultsController: nil)
-    var collectionView: UICollectionView!
-    var dataSource: UICollectionViewDiffableDataSource<Section, DocumentStruct>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,9 +87,7 @@ final class SearchCollectionViewController: UIViewController {
 
 extension SearchCollectionViewController: UISearchResultsUpdating, UISearchBarDelegate {
     
-    var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
-    }
+    var isSearchBarEmpty: Bool { return searchController.searchBar.text?.isEmpty ?? true }
     
     func updateData(on searchDocList: [DocumentStruct]) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, DocumentStruct>()

@@ -12,7 +12,8 @@ final class DocumentCell: UICollectionViewCell {
     static let reuseID = "DocumentCell"
     
     let frontImageView = DMFrontImageView(frame: .zero),
-        documentLabel = DMTitleLabel(textAlignment: .center, fontSize: 12)
+        documentLabel = DMTitleLabel(textAlignment: .center, fontSize: 12),
+        padding: CGFloat = 8
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,8 +32,6 @@ final class DocumentCell: UICollectionViewCell {
     private func configure() {
         addSubview(frontImageView)
         addSubview(documentLabel)
-        
-        let padding: CGFloat = 8
         
         NSLayoutConstraint.activate([
             frontImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
