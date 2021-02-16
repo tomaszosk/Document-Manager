@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeViewController: UIViewController {
     
-    let logoLabel = DMTitleLabel(textAlignment: .center, fontSize: 46),
+    let logoLabel = DMTitleLabel(textAlignment: .center, fontSize: 40),
         locationLabel = DMTitleLabel(textAlignment: .center, fontSize: 20),
         appLogoImage = DMFrontImageView(frame: .zero),
         descriptionLabel = DMBodyLabel(textAlignment: .left),
@@ -63,12 +63,12 @@ final class HomeViewController: UIViewController {
     
     private func setLabels() {
         
-        let attributedString = NSMutableAttributedString.init(string: "Junkers-Bosch")
+        let attributedString = NSMutableAttributedString.init(string: "AmberTeam Testing")
         attributedString.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:
             NSRange.init(location: 0, length: attributedString.length));
         logoLabel.attributedText = attributedString
         
-        locationLabel.text = "Oddział Warszawa-Targówek"
+        locationLabel.text = "Warszawa"
         descriptionLabel.text = """
             Sposób dodawania dokumentów:
         
